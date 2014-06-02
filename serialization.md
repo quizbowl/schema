@@ -26,7 +26,20 @@ The same object **must not** be defined more than once in a file.
 
 ## Pointers
 
-Wherever an object includes another object as a field, it **may** substitute the other object's `id` field for the definition if the other object is defined with an `id` elsewhere in the file. Likewise, if an object includes an array of other objects, it **may** substitute an array of the other objects' `id` fields.
+Wherever an object includes another object as a field, it **may** substitute a "pointer object" for the definition if the other object is defined with an `id` elsewhere in the file. Likewise, if an object includes an array of other objects, it **may** substitute an array of pointer objects.
+
+A pointer object has one key called `$ref` with a value of the `id` of the object to which it points, so if you have an object defined in one place:
+
+    {
+      "id": "team_1",
+      "type": "TeamRoster",
+      "name": "Team 1",
+      "players": [...]
+    }
+
+you can reference it elsewhere in the file with a pointer object:
+
+    { "$ref": "team_1" }
 
 ## Dangling pointers
 
@@ -36,6 +49,6 @@ If any dangling pointers exist in the file, the file extension should be `.parti
 
 ## Minimal example
 
-Whew! That's a lot of really specific-sounding technical jargon. But the whole format plays out pretty straightforwardly in practice. Here's an example of a very small tournament.
+That's a lot of really specific-sounding technical jargon. But the whole format plays out pretty straightforwardly in practice. Here's an example of a very small tournament.
 
     (This is where the example goes.)
