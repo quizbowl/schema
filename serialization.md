@@ -32,7 +32,7 @@ A pointer object has one key called `$ref` with a value of the `id` of the objec
 
     {
       "id": "team_1",
-      "type": "TeamRoster",
+      "type": "Team",
       "name": "Team 1",
       "players": [...]
     }

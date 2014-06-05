@@ -12,6 +12,11 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type">String</td>
     <td>The tournament's name.</td>
   </tr>
+  <tr>
+    <th>short_name</th>
+    <td class="type">String</td>
+    <td>An abbreviated version of the tournament's <code>name</code>. If omitted, assume the same as the <code>name</code>.</td>
+  </tr>
   <tr class="optional">
     <th>site</th>
     <td class="type">TournamentSite</td>
@@ -58,9 +63,19 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The tournament site's name.</td>
   </tr>
   <tr class="optional">
-    <th>city</th>
+    <th>place</th>
     <td class="type">String</td>
-    <td>The city/state/country of the tournament's site.</td>
+    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site.</td>
+  </tr>
+  <tr class="optional">
+    <th>latitude</th>
+    <td class="type">Number</td>
+    <td>The latitude of the tournament's site (for geolocation).</td>
+  </tr>
+  <tr class="optional">
+    <th>longitude</th>
+    <td class="type">Number</td>
+    <td>The longitude of the tournament's site (for geolocation).</td>
   </tr>
 </tbody></table>
 

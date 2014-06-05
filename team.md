@@ -1,10 +1,10 @@
 ---
 layout: page
-title: TeamRoster
+title: Team
 ---
-A `TeamRoster` has a team name, other entry-specific information about the team that may not apply to other teams from the same organization, and a list of [`Player`][player] objects.
+A `Team` has a team name, other entry-specific information about the team that may not apply to other teams from the same organization, and a list of [`Player`][player] objects.
 
-## TeamRoster object
+## Team object
 
 <table class="fields"><tbody>
   <tr class="required">

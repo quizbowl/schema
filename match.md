@@ -53,8 +53,8 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
 
 <table class="fields"><tbody>
   <tr class="optional">
-    <th>team_roster</th>
-    <td class="type"><a href="{{ site.baseurl }}/team_roster">TeamRoster</a></td>
+    <th>team</th>
+    <td class="type"><a href="{{ site.baseurl }}/team">Team</a></td>
     <td>The team playing this side of the match.</td>
   </tr>
   <tr class="optional">
@@ -63,7 +63,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The card this team was holding at the beginning of this match.</td>
   </tr>
   <tr class="required annotation">
-    <td colspan="3">At least one of <b>team_roster</b> or <b>card</b> is required.</td>
+    <td colspan="3">At least one of <b>team</b> or <b>card</b> is required.</td>
   </tr>
   <tr class="optional">
     <th>points</th>
