@@ -111,23 +111,36 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The player who scored these points.</td>
   </tr>
   <tr class="required">
-    <th>tossups</th>
+    <th>tossups_heard</th>
     <td class="type">Number</td>
     <td>Number representing the number of tossups this player heard.</td>
   </tr>
   <tr class="required">
-    <th>fifteens</th>
-    <td class="type">Number</td>
-    <td>Number representing the number of tossups this player answered correctly before the power mark.</td>
+    <th>answer_counts</th>
+    <td class="type"><nobr>Array <code>PlayerAnswerCount</code></nobr></td>
+    <td>The number of this player's answers for each answer value.</td>
   </tr>
+</tbody></table>
+
+## PlayerAnswerCount object
+
+<table class="fields"><tbody>
   <tr class="required">
-    <th>tens</th>
+    <th>number</th>
     <td class="type">Number</td>
-    <td>Number representing the number of tossups this player answered correctly.</td>
+    <td>Number of questions answered for this many points.</td>
   </tr>
-  <tr class="required">
-    <th>neg_fives</th>
+  <tr class="optional">
+    <th>value</th>
     <td class="type">Number</td>
-    <td>Number representing the number of tossups this player answered incorrectly and lost five points on.</td>
+    <td>Point value per answer of this type.</td>
+  </tr>
+  <tr class="optional">
+    <th>answer_type</th>
+    <td class="type"><a href="{{ site.baseurl }}/answer_type">AnswerType</a></td>
+    <td>For nonstandard question types, the particular details about this question type.</td>
+  </tr>
+  <tr class="required annotation">
+    <td colspan="3">Exactly one of <b>value</b> or <b>question_type</b> is required.</td>
   </tr>
 </tbody></table>
