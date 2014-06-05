@@ -63,9 +63,9 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The tournament site's name.</td>
   </tr>
   <tr class="optional">
-    <th>address</th>
+    <th>place</th>
     <td class="type">String</td>
-    <td>The address of the tournament.</td>
+    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site.</td>
   </tr>
   <tr class="optional">
     <th>latitude</th>
