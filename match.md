@@ -95,6 +95,11 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td class="type"><nobr>Array <code>MatchPlayer</code></nobr></td>
     <td>The performances of the players on this team, see below.</td>
   </tr>
+  <tr class="optional">
+    <th>suppress_from_statistics</th>
+    <td class="type">Boolean</td>
+    <td>Indicates that the match should be excluded from calculations of standings, statistics, etc. If absent, this will be assumed to be <code>false</code>.</td>
+  </tr>
 </tbody></table>
 
 ## MatchPlayer object
