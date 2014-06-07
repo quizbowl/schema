@@ -76,9 +76,9 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The number of bonus questions controlled by this team (i.e., that it had the first opportunity to answer due to answering a tossup question correctly). If absent, this will be calculated as equal to the number of tossup questions answered correctly by this team's players.</td>
   </tr>
   <tr class="optional">
-    <th>bonus_bounceback_opportunities</th>
+    <th>bounceback_points_available</th>
     <td class="type">Number</td>
-    <td>The number of bonus parts missed by this team's opponent that this team had the opportunity to answer. If absent, this will be calculated as equal to the number of bonuses controlled by the opponent times the maximum value of a bonus, minus the number of bonus points earned by the opponent.</td>
+    <td>The number of bonus points missed by this team's opponent that this team had the opportunity to answer. If absent, this will be calculated as equal to the number of bonuses controlled by the opponent times the maximum value of a bonus, minus the number of bonus points earned by the opponent.</td>
   </tr>
   <tr class="optional">
     <th>bounceback_points</th>
