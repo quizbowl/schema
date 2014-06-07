@@ -71,9 +71,24 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The number of points this team scored in this match.</td>
   </tr>
   <tr class="optional">
-    <th>bonuses_heard</th>
+    <th>bonuses_controlled</th>
     <td class="type">Number</td>
-    <td>The number of bonus questions heard by this team. If absent, this will be calculated as equal to the number of tossup questions answered correctly by this team's players.</td>
+    <td>The number of bonus questions controlled by this team (i.e., that it had the first opportunity to answer due to answering a tossup question correctly). If absent, this will be calculated as equal to the number of tossup questions answered correctly by this team's players.</td>
+  </tr>
+  <tr class="optional">
+    <th>bonus_bounceback_opportunities</th>
+    <td class="type">Number</td>
+    <td>The number of bonus parts missed by this team's opponent that this team had the opportunity to answer. If absent, this will be calculated as equal to the number of bonuses controlled by the opponent times the maximum value of a bonus, minus the number of bonus points earned by the opponent.</td>
+  </tr>
+  <tr class="optional">
+    <th>bounceback_points</th>
+    <td class="type">Number</td>
+    <td>The number of points earned on bonuses bounced back from the opponent.</td>
+  </tr>
+  <tr class="optional">
+    <th>lightning_points</th>
+    <td class="type">Number</td>
+    <td>The number of points earned on lightning questions.</td>
   </tr>
   <tr class="optional">
     <th>match_players</th>
