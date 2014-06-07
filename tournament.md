@@ -79,5 +79,20 @@ A `Tournament` object describes a tournament for which a single result is publis
   </tr>
 </tbody></table>
 
+## Title object
+
+<table class="fields"><tbody>
+  <tr class="optional">
+    <th>name</th>
+    <td class="type">String</td>
+    <td>The name of the title.</td>
+  </tr>
+  <tr class="optional">
+    <th>description</th>
+    <td class="type">String</td>
+    <td>A description of the title, such as information on eligibility.</td>
+  </tr>
+</tbody></table>
+
 [match]: {{ site.baseurl }}/match
 [registration]: {{ site.baseurl }}/registration
