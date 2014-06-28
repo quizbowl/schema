@@ -2,7 +2,7 @@
 layout: page
 title: AnswerType
 ---
-A `AnswerType` object has all kinds of esoteric details about what happens on different answer types.
+A `AnswerType` object has all kinds of esoteric details about what happens on different answer types. If you're talking about the traditional -5/10/15 answer types, you can skip this and use the `value` field instead.
 
 ## AnswerType object
 
@@ -16,6 +16,11 @@ A `AnswerType` object has all kinds of esoteric details about what happens on di
     <th>label</th>
     <td class="type">String</td>
     <td>How to label this answer type on reports.</td>
+  </tr>
+  <tr class="optional">
+    <th>short_label</th>
+    <td class="type">String</td>
+    <td>How to label this answer type on reports when space is limited, perhaps in a table column header.</td>
   </tr>
   <tr class="optional">
     <th>awards_bonus</th>
