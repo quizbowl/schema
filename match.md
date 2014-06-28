@@ -141,6 +141,6 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>For nonstandard question types, the particular details about this question type.</td>
   </tr>
   <tr class="required annotation">
-    <td colspan="3">Exactly one of <b>value</b> or <b>question_type</b> is required.</td>
+    <td colspan="3">Exactly one of <b>value</b> or <b>answer_type</b> is required.</td>
   </tr>
 </tbody></table>
