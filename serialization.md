@@ -12,9 +12,9 @@ All of the data types in the schema for an object are either native JSON data ty
 
 Indeed, native JSON data types serialize as you would expect in JSON; object types defined here serialize as JSON objects with a few extra fields.
 
-The top level of the JSON file **must** be an object with keys for `version`, which is "0.5", and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
+The top level of the JSON file **must** be an object with keys for `version`, which is "0.6", and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
 
-The file's extension should be `.qbj` and its MIME type should be `application/json`.
+The file's extension should be `.qbj` and its MIME type should be `application/vnd.quizbowl.qbj+json`.
 
 ## Objects
 
@@ -22,7 +22,7 @@ Every object at the top level of the JSON file **must** include a `type` field w
 
 Objects defined within other objects **may** include a `type` field and an `id` field.
 
-The same object **must not** be defined more than once in a file.
+The same `id` **must not** be defined more than once in a file.
 
 ## Pointers
 
