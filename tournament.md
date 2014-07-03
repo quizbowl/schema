@@ -43,6 +43,11 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The number of players per side during a game. If omitted, assume <code>4</code>.</td>
   </tr>
   <tr class="optional">
+    <th>answer_types</th>
+    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></nobr></td>
+    <td>The different answer values possible in this tournament.</td>
+  </tr>
+  <tr class="optional">
     <th>registrations</th>
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/registration">Registration</a></code></nobr></td>
     <td>The organizations registered to play in this tournament.</td>
