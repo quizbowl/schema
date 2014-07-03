@@ -52,6 +52,11 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/match">Match</a></code></nobr></td>
     <td>The matches that took place in this tournament.</td>
   </tr>
+  <tr class="optional">
+    <th>titles</th>
+    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/title">Title</a></code></nobr></td>
+    <td>The titles awarded at this tournament.</td>
+  </tr>
 </tbody></table>
 
 ## TournamentSite object
@@ -76,21 +81,6 @@ A `Tournament` object describes a tournament for which a single result is publis
     <th>longitude</th>
     <td class="type">Number</td>
     <td>The longitude of the tournament's site (for geolocation).</td>
-  </tr>
-</tbody></table>
-
-## Title object
-
-<table class="fields"><tbody>
-  <tr class="optional">
-    <th>name</th>
-    <td class="type">String</td>
-    <td>The name of the title.</td>
-  </tr>
-  <tr class="optional">
-    <th>description</th>
-    <td class="type">String</td>
-    <td>A description of the title, such as information on eligibility.</td>
   </tr>
 </tbody></table>
 
