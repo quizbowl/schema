@@ -2,7 +2,7 @@
 layout: page
 title: Match
 ---
-A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played.
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `IndividualPerformance` objects can be used to describe a match that has been scheduled but not played.
 
 ## Match object
 
@@ -96,8 +96,8 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The number of points earned on lightning questions.</td>
   </tr>
   <tr class="optional">
-    <th>match_players</th>
-    <td class="type"><nobr>Array <code>MatchPlayer</code></nobr></td>
+    <th>individual_performances</th>
+    <td class="type"><nobr>Array <code>IndividualPerformance</code></nobr></td>
     <td>The performances of the players on this team, see below.</td>
   </tr>
   <tr class="optional">
@@ -107,7 +107,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   </tr>
 </tbody></table>
 
-## MatchPlayer object
+## IndividualPerformance object
 
 <table class="fields"><tbody>
   <tr class="required">
