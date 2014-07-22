@@ -28,6 +28,11 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The location of the match. Probably a room name.</td>
   </tr>
   <tr class="optional">
+    <th>tiebreaker</th>
+    <td class="type">Boolean</td>
+    <td>Was the match a tiebreaker match?</td>
+  </tr>
+  <tr class="optional">
     <th>playoffs</th>
     <td class="type">Boolean</td>
     <td>Was the match a playoff match?</td>
