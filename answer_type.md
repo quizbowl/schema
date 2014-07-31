@@ -2,7 +2,7 @@
 layout: page
 title: AnswerType
 ---
-A `AnswerType` object has all kinds of esoteric details about how tossups can be answered. If you're talking about the traditional -5/10/15 answer types or some subset thereof, you can skip this and use the `value` field instead.
+A `AnswerType` object has details about how tossups can be answered. If you're talking about the traditional -5/10/15 answer types or some subset thereof, you can skip this and use the `value` field instead.
 
 ## AnswerType object
 
