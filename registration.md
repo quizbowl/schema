@@ -13,9 +13,9 @@ A `Registration` object describes one school or other organization's entry into 
     <td>The school or other organization's name.</td>
   </tr>
   <tr class="optional">
-    <th>city</th>
+    <th>location</th>
     <td class="type">String</td>
-    <td>The city/state/country of this team's origin.</td>
+    <td>The location of this team's origin. This may be any combination of city, state, country, etc., as appropriate for the tournament, and should be in human-readable format.</td>
   </tr>
   <tr class="required">
     <th>teams</th>
