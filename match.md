@@ -113,7 +113,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   <tr class="required">
     <th>player</th>
     <td class="type"><a href="{{ site.baseurl }}/player">Player</a></td>
-    <td>The player who scored these points.</td>
+    <td>The player whose performance in this match is being stored.</td>
   </tr>
   <tr class="required">
     <th>tossups_heard</th>

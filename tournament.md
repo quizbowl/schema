@@ -38,9 +38,9 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The first round of this tournament's playoffs.</td>
   </tr>
   <tr class="optional">
-    <th>players_per_side</th>
+    <th>max_players_per_side</th>
     <td class="type">Number</td>
-    <td>The number of players per side during a game. If omitted, assume <code>4</code>.</td>
+    <td>The maximum number of players that may be active at once, per team, in a match. If omitted, assume <code>4</code>.</td>
   </tr>
   <tr class="optional">
     <th>answer_types</th>
