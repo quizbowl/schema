@@ -22,7 +22,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type">TournamentSite</td>
     <td>Where this tournament happened; see below.</td>
   </tr>
-  <tr class="optional">
+  <tr>
     <th>scoring_rules</th>
     <td class="type">ScoringRules</td>
     <td>Validation rules for scoring matches in this tournament; see below.</td>
