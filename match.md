@@ -12,7 +12,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td class="type">Number</td>
     <td>The round number.</td>
   </tr>
-  <tr class="required">
+  <tr class="optional">
     <th>tossups</th>
     <td class="type">Number</td>
     <td>The number of tossups read, <em>including</em> any tossups read in overtime.</td>
@@ -138,7 +138,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   <tr class="optional">
     <th>answer_type</th>
     <td class="type"><a href="{{ site.baseurl }}/answer_type">AnswerType</a></td>
-    <td>For nonstandard question types, the particular details about this question type.</td>
+    <td>For nonstandard question types, the particular details about this answer type.</td>
   </tr>
   <tr class="required annotation">
     <td colspan="3">Exactly one of <b>value</b> or <b>answer_type</b> is required.</td>
