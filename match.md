@@ -2,7 +2,7 @@
 layout: page
 title: Match
 ---
-A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `IndividualPerformance` objects can be used to describe a match that has been scheduled but not played.
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `TeamPerformance` objects but without `IndividualPerformance` objects can be used to describe a match that has been scheduled but not played.
 
 ## Match object
 
@@ -48,13 +48,13 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>"For control room use only" type serial number.</td>
   </tr>
   <tr class="required">
-    <th>match_teams</th>
-    <td class="type"><nobr>Array <code>MatchTeam</code></nobr></td>
+    <th>team_performances</th>
+    <td class="type"><nobr>Array <code>TeamPerformance</code></nobr></td>
     <td>The performances of the teams in this match, see below.</td>
   </tr>
 </tbody></table>
 
-## MatchTeam object
+## TeamPerformance object
 
 <table class="fields"><tbody>
   <tr class="optional">
@@ -71,29 +71,24 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td colspan="3">At least one of <b>team</b> or <b>card</b> is required.</td>
   </tr>
   <tr class="optional">
-    <th>points</th>
+    <th>bonus_points</th>
     <td class="type">Number</td>
-    <td>The number of points this team scored in this match.</td>
+    <td>The number of points this team earned on bonuses.</td>
   </tr>
   <tr class="optional">
-    <th>bonuses_controlled</th>
+    <th>bonus_bounceback_points</th>
     <td class="type">Number</td>
-    <td>The number of bonus questions controlled by this team (i.e., that it had the first opportunity to answer due to answering a tossup question correctly). If absent, this will be calculated as equal to the number of tossup questions answered correctly by this team's players.</td>
-  </tr>
-  <tr class="optional">
-    <th>bounceback_points_available</th>
-    <td class="type">Number</td>
-    <td>The number of bonus points missed by this team's opponent that this team had the opportunity to answer. If absent, this will be calculated as equal to the number of bonuses controlled by the opponent times the maximum value of a bonus, minus the number of bonus points earned by the opponent.</td>
-  </tr>
-  <tr class="optional">
-    <th>bounceback_points</th>
-    <td class="type">Number</td>
-    <td>The number of points earned on bonuses bounced back from the opponent.</td>
+    <td>The number of points this team earned on bonuses bounced back from the opponent.</td>
   </tr>
   <tr class="optional">
     <th>lightning_points</th>
     <td class="type">Number</td>
-    <td>The number of points earned on lightning questions.</td>
+    <td>The number of points this team earned on lightning questions.</td>
+  </tr>
+  <tr class="optional">
+    <th>lightning_bounceback_points</th>
+    <td class="type">Number</td>
+    <td>The number of points this team earned on lightning questions bonunced back from the opponent.</td>
   </tr>
   <tr class="optional">
     <th>individual_performances</th>
