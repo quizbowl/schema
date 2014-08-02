@@ -8,7 +8,7 @@ This page describes a JSON-based serialization format to write a whole tournamen
 
 ## Basic format
 
-All of the data types in the schema for an object are either native JSON data types or pointers other object types.
+All of the data types in the schema for an object are either native JSON data types or references to other object types.
 
 Indeed, native JSON data types serialize as you would expect in JSON; object types defined here serialize as JSON objects with a few extra fields.
 
@@ -18,17 +18,17 @@ The file's extension should be `.qbj` and its MIME type should be `application/v
 
 ## Objects
 
-Every object at the top level of the JSON file **must** include a `type` field with its type as a string. The object **may** include an `id` field with a unique identifier as a string. If the object is referenced by a pointer elsewhere in the file, it **must** include an `id` field, and the contents of the field **must** be unique among objects of the same type.
+Every object at the top level of the JSON file **must** include a `type` field with its type as a string. The object **may** include an `id` field with a unique identifier as a string. If the object is referenced by a reference elsewhere in the file, it **must** include an `id` field, and the contents of the field **must** be unique among objects of the same type.
 
 Objects defined within other objects **may** include a `type` field and an `id` field.
 
 The same `id` **must not** be defined more than once in a file.
 
-## Pointers
+## References
 
-Wherever an object includes another object as a field, it **may** substitute a "pointer object" for the definition if the other object is defined with an `id` elsewhere in the file. Likewise, if an object includes an array of other objects, it **may** substitute an array of pointer objects.
+Wherever an object includes another object as a field, it **may** substitute a "reference object" for the definition if the other object is defined with an `id` elsewhere in the file. Likewise, if an object includes an array of other objects, it **may** substitute an array of reference objects.
 
-A pointer object has one key called `$ref` with a value of the `id` of the object to which it points, so if you have an object defined in one place:
+A reference object has one key called `$ref` with a value of the `id` of the object to which it points, so if you have an object defined in one place:
 
     {
       "id": "team_1",
@@ -37,15 +37,13 @@ A pointer object has one key called `$ref` with a value of the `id` of the objec
       "players": [...]
     }
 
-you can reference it elsewhere in the file with a pointer object:
+you can reference it elsewhere in the file with a reference object:
 
     { "$ref": "team_1" }
 
-## Dangling pointers
+## Dangling references
 
-In the interest of incremental data transfer, it is *not* considered an data format error to have a pointer from an object to another object that isn't defined in the file. If the receiving end of the data transfer parses the file and cannot resolve the pointers, it should fail with an application-level error.
-
-If any dangling pointers exist in the file, the file extension should be `.partial.qbj`.
+In the interest of incremental data transfer, it is *not* considered an data format error to have a reference from an object to another object that isn't defined in the file. If the receiving end of the data transfer parses the file and cannot resolve the references, it should fail with an application-level error.
 
 ## Minimal example
 
