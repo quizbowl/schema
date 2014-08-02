@@ -12,7 +12,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td class="type">Number</td>
     <td>The round number.</td>
   </tr>
-  <tr class="required">
+  <tr class="optional">
     <th>tossups</th>
     <td class="type">Number</td>
     <td>The number of tossups read, <em>including</em> any tossups read in overtime.</td>
