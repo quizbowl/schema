@@ -2,7 +2,7 @@
 layout: page
 title: Match
 ---
-A `Match` object describes a single match scheduled between two teams. A `Match` object with `TeamPerformance` objects but without `IndividualPerformance` objects can be used to describe a match that has been scheduled but not played.
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played.
 
 ## Match object
 
@@ -48,13 +48,13 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>"For control room use only" type serial number.</td>
   </tr>
   <tr class="required">
-    <th>team_performances</th>
-    <td class="type"><nobr>Array <code>TeamPerformance</code></nobr></td>
+    <th>match_teams</th>
+    <td class="type"><nobr>Array <code>MatchTeam</code></nobr></td>
     <td>The performances of the teams in this match, see below.</td>
   </tr>
 </tbody></table>
 
-## TeamPerformance object
+## MatchTeam object
 
 <table class="fields"><tbody>
   <tr class="optional">
@@ -68,12 +68,20 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The card this team was holding at the beginning of this match.</td>
   </tr>
   <tr class="required annotation">
-    <td colspan="3">At least one of <b>team</b> or <b>card</b> is required.</td>
+    <td colspan="3">At least one of <code>team</code> or <code>card</code> is required.</td>
+  </tr>
+  <tr class="optional">
+    <th>points</th>
+    <td class="type">Number</td>
+    <td>The total score for this team in this match.</td>
   </tr>
   <tr class="optional">
     <th>bonus_points</th>
     <td class="type">Number</td>
     <td>The number of points this team earned on bonuses.</td>
+  </tr>
+  <tr class="required annotation">
+    <td colspan="3">It is invalid to provide both <code>points</code> and <code>bonus_points</code> since that could allow for inconsistent data. Generally, <code>bonus_points</code> is preferred; <code>points</code> is for results that do not include detailed (player-level) statistics.</td>
   </tr>
   <tr class="optional">
     <th>bonus_bounceback_points</th>
@@ -91,8 +99,8 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>The number of points this team earned on lightning questions bonunced back from the opponent.</td>
   </tr>
   <tr class="optional">
-    <th>individual_performances</th>
-    <td class="type"><nobr>Array <code>IndividualPerformance</code></nobr></td>
+    <th>match_players</th>
+    <td class="type"><nobr>Array <code>MatchPlayer</code></nobr></td>
     <td>The performances of the players on this team, see below.</td>
   </tr>
   <tr class="optional">
@@ -102,7 +110,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   </tr>
 </tbody></table>
 
-## IndividualPerformance object
+## MatchPlayer object
 
 <table class="fields"><tbody>
   <tr class="required">
@@ -141,6 +149,6 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>For nonstandard question types, the particular details about this answer type.</td>
   </tr>
   <tr class="required annotation">
-    <td colspan="3">Exactly one of <b>value</b> or <b>answer_type</b> is required.</td>
+    <td colspan="3">Exactly one of <code>value</code> or <code>answer_type</code> is required.</td>
   </tr>
 </tbody></table>
