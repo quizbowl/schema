@@ -28,9 +28,9 @@ A `Phase` object describes a part of the tournament with a unified match structu
     <td>Whether teams may trade cards during this phase. For example, <code>true</code> would be used for a power-matching or elimination structure, while <code>false</code> could be used for a round-robin structure. If absent, assumed to be <code>false</code>.</td>
   </tr>
   <tr class="optional">
-    <th>groups</th>
-    <td class="type"><nobr>Array <code>Group</code></nobr></td>
-    <td>The groups into which teams are placed for this phase.</td>
+    <th>pools</th>
+    <td class="type"><nobr>Array <code>Pool</code></nobr></td>
+    <td>The pools (or similar structures) into which teams are placed for this phase.</td>
   </tr>
 </tbody></table>
 
@@ -59,44 +59,44 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
 </tbody></table>
 
-## Group object
+## Pool object
 
-A `Group` object represents a set of teams that, in some meaningful sense, play together for the phase. They might be round-robin pools, playoff tiers, etc. It is not required that teams _only_ play matches within their group.
+A `Pool` object represents a set of teams that, in some meaningful sense, play together for the phase. They might be round-robin pools, playoff tiers, etc. It is not required that teams _only_ play matches within their pool.
 
 <table class="fields"><tbody>
   <tr>
     <th>name</th>
     <td class="type">String</td>
-    <td>The name of the group.</td>
+    <td>The name of the pool.</td>
   </tr>
   <tr class="optional">
     <th>description</th>
     <td class="type">String</td>
-    <td>A description of the group.</td>
+    <td>A description of the pool.</td>
   </tr>
   <tr class="optional">
-    <th>group_teams</th>
-    <td class="type"><nobr>Array <code>GroupTeam</code></nobr></td>
-    <td>The assignments of teams to groups for this phase.</td>
+    <th>pool_teams</th>
+    <td class="type"><nobr>Array <code>PoolTeam</code></nobr></td>
+    <td>The assignments of teams to pools for this phase.</td>
   </tr>
 </tbody></table>
 
-## GroupTeam object
+## PoolTeam object
 
 <table class="fields"><tbody>
   <tr>
-    <th>group</th>
-    <td class="type">Group</td>
-    <td>The Group to which the Team is assigned.</td>
+    <th>pool</th>
+    <td class="type">Pool</td>
+    <td>The Pool to which the Team is assigned.</td>
   </tr>
   <tr>
     <th>team</th>
     <td class="type">Team</td>
-    <td>The Team being assigned to the Group.</td>
+    <td>The Team being assigned to the Pool.</td>
   </tr>
   <tr class="optional">
     <th>rank</th>
     <th class="type">Number</td>
-    <td>The final ranking of this Team within this Group.</td>
+    <td>The final ranking of this Team within this Pool.</td>
   </tr>
 </tbody></table>
