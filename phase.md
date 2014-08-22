@@ -94,4 +94,9 @@ A `Group` object represents a set of teams that, in some meaningful sense, play 
     <td class="type">Team</td>
     <td>The Team being assigned to the Group.</td>
   </tr>
+  <tr class="optional">
+    <th>rank</th>
+    <th class="type">Number</td>
+    <td>The final ranking of this Team within this Group.</td>
+  </tr>
 </tbody></table>
