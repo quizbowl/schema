@@ -110,7 +110,7 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>maximum_regulation_tossup_count</th>
     <td class="type">Number</td>
-    <td>The maximum number of tossups heard in a match that does not go into overtime. (Different from <code>regulation_tossup_count</code> for tournaments that used timed matches.</code>.) If omitted, assume <code>20</code>.</td>
+    <td>The maximum number of tossups heard in a match that does not go into overtime. (Different from <code>regulation_tossup_count</code> for tournaments that used timed matches.) If omitted, assume <code>20</code>.</td>
   </tr>
   <tr class="optional">
     <th>total_divisor</th>
