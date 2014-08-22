@@ -25,7 +25,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   <tr class="optional">
     <th>cards_traded</th>
     <td class="type">Boolean</td>
-    <td>Whether teams may trade cards during this phase (representing a power-matching or elimination structure). If absent, assumed to be <code>false</code>.</td>
+    <td>Whether teams may trade cards during this phase. For example, <code>true</code> would be used for a power-matching or elimination structure, while <code>false</code> could be used for a round-robin structure. If absent, assumed to be <code>false</code>.</td>
   </tr>
   <tr class="optional">
     <th>groups</th>
