@@ -48,9 +48,9 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The organizations registered to play in this tournament.</td>
   </tr>
   <tr class="optional">
-    <th>matches</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/match">Match</a></code></nobr></td>
-    <td>The matches that took place in this tournament.</td>
+    <th>phases</th>
+    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/phase">Phase</a></code></nobr></td>
+    <td>The phases of play in this tournament.</td>
   </tr>
   <tr class="optional">
     <th>rankings</th>
