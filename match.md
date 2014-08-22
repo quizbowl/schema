@@ -33,11 +33,6 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td>Was the match a playoff match?</td>
   </tr>
   <tr class="optional">
-    <th>forfeit</th>
-    <td class="type">Boolean</td>
-    <td>Was the match forfeited by one of the teams involved?</td>
-  </tr>
-  <tr class="optional">
     <th>serial</th>
     <td class="type">String</td>
     <td>"For control room use only" type serial number.</td>
@@ -66,6 +61,11 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
     <td colspan="3">At least one of <code>team</code> or <code>card</code> is required.</td>
   </tr>
   <tr class="optional">
+    <th>forfeit_loss</th>
+    <td class="type">Boolean</td>
+    <td>Did this team forfeit this match? If absent, assumed to be <code>false</code>. Note that it is possible for both teams in a match to forfeit.</td>
+  </tr>
+  <tr class="optional">
     <th>points</th>
     <td class="type">Number</td>
     <td>The total score for this team in this match.</td>
@@ -91,7 +91,7 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   <tr class="optional">
     <th>lightning_bounceback_points</th>
     <td class="type">Number</td>
-    <td>The number of points this team earned on lightning questions bonunced back from the opponent.</td>
+    <td>The number of points this team earned on lightning questions bounced back from the opponent.</td>
   </tr>
   <tr class="optional">
     <th>match_players</th>
