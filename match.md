@@ -2,7 +2,7 @@
 layout: page
 title: Match
 ---
-A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played. Matches are contained in `Round`s, which are contained in `Phase`s of the `Tournament`.
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played. Matches are contained in `Round` objects, which are contained in `Phase` objects of the `Tournament`.
 
 ## Match object
 
