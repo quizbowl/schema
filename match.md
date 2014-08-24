@@ -35,7 +35,12 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   <tr class="required">
     <th>match_teams</th>
     <td class="type"><nobr>Array <code>MatchTeam</code></nobr></td>
-    <td>The performances of the teams in this match, see below.</td>
+    <td>The performances of the teams in this match; see below.</td>
+  </tr>
+  <tr class="optional">
+    <th>carryover_phases</th>
+    <td class="type"><nobr>Array <code>Phase</code></nobr></td>
+    <td>Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.</td>
   </tr>
 </tbody></table>
 
