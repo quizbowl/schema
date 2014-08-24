@@ -120,7 +120,7 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>overtime_includes_bonuses</th>
     <td class="type">Boolean</td>
-    <td>Are bonuses used in overtime? If omtited, assume <code>false</code>.</td>
+    <td>Are bonuses used in overtime? If omitted, assume <code>false</code>.</td>
   </tr>
   <tr class="optional">
     <th>total_divisor</th>
