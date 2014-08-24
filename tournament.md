@@ -113,6 +113,16 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The maximum number of tossups heard in a match that does not go into overtime. (Different from <code>regulation_tossup_count</code> for tournaments that used timed matches.) If omitted, assume <code>20</code>.</td>
   </tr>
   <tr class="optional">
+    <th>minimum_overtime_question_count</th>
+    <td class="type">Number</td>
+    <td>The smallest possible number of overtime tossups or tossup-bonus cycles (as determined by <code>overtime_includes_bonuses</code>). If overtime is sudden death from the beginning, this will be <code>1</code>, and that is the value assumed if this field is omitted.</td>
+  </tr>
+  <tr class="optional">
+    <th>overtime_includes_bonuses</th>
+    <td class="type">Boolean</td>
+    <td>Are bonuses used in overtime? If omtited, assume <code>false</code>.</td>
+  </tr>
+  <tr class="optional">
     <th>total_divisor</th>
     <td class="type">Number</td>
     <td>The largest integer that is guaranteed to be a factor of a valid final score for one team in one match. If omitted, assume <code>5</code>. If present, must be a positive integer.</td>
