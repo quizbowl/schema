@@ -38,11 +38,6 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The tournament's end date, as an ISO 8601-formatted string in the tournament's local time zone.</td>
   </tr>
   <tr class="optional">
-    <th>first_playoff_round</th>
-    <td class="type">Number</td>
-    <td>The first round of this tournament's playoffs.</td>
-  </tr>
-  <tr class="optional">
     <th>registrations</th>
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/registration">Registration</a></code></nobr></td>
     <td>The organizations registered to play in this tournament.</td>
