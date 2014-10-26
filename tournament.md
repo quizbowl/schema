@@ -18,7 +18,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>An abbreviated version of the tournament's <code>name</code>. If omitted, assume the same as the <code>name</code>.</td>
   </tr>
   <tr class="optional">
-    <th>site</th>
+    <th>tournament_site</th>
     <td class="type">TournamentSite</td>
     <td>Where this tournament happened; see below.</td>
   </tr>
