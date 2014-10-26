@@ -8,12 +8,12 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
 
 <table class="fields"><tbody>
   <tr class="optional">
-    <th>tossups</th>
+    <th>tossups_read</th>
     <td class="type">Number</td>
     <td>The number of tossups read, <em>including</em> any tossups read in overtime.</td>
   </tr>
   <tr class="optional">
-    <th>overtime_tossups</th>
+    <th>overtime_tossups_read</th>
     <td class="type">Number</td>
     <td>The number of tossups read in overtime.</td>
   </tr>

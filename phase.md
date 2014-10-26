@@ -75,9 +75,9 @@ A `Pool` object represents a set of teams that, in some meaningful sense, play t
     <td>A description of the pool.</td>
   </tr>
   <tr class="optional">
-    <th>rank</th>
+    <th>position</th>
     <td class="type">Number</td>
-    <td>The rank of this Pool among all Pool objects used for its Phase. Need not be unique (e.g. in the case of parallel pools).</td>
+    <td>The position/rank of this Pool among all Pool objects used for its Phase. Need not be unique (e.g. in the case of parallel pools).</td>
   </tr>
   <tr class="optional">
     <th>pool_teams</th>
@@ -100,8 +100,8 @@ A `Pool` object represents a set of teams that, in some meaningful sense, play t
     <td>The Team being assigned to the Pool.</td>
   </tr>
   <tr class="optional">
-    <th>rank</th>
+    <th>position</th>
     <td class="type">Number</td>
-    <td>The final ranking of this Team within this Pool.</td>
+    <td>The final position/rank of this Team within this Pool.</td>
   </tr>
 </tbody></table>
