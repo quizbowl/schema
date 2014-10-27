@@ -60,12 +60,12 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr>
     <th>name</th>
     <td class="type">String</td>
-    <td>The tournament site's name.</td>
+    <td>The tournament site's name (e.g. "Hyatt Regency O'Hare").</td>
   </tr>
   <tr class="optional">
     <th>place</th>
     <td class="type">String</td>
-    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site.</td>
+    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site. An example might be "9300 Bryn Mawr Avenue, Rosemont, Illinois".</td>
   </tr>
   <tr class="optional">
     <th>latitude</th>
