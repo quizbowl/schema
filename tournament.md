@@ -93,7 +93,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The number of teams that participates in each match. If omitted, assume <code>2</code>.</td>
   </tr>
   <tr class="optional">
-    <th>max_players_per_side</th>
+    <th>max_players_per_team</th>
     <td class="type">Number</td>
     <td>The maximum number of players that may be active at once, per team, in a match. If omitted, assume <code>4</code>.</td>
   </tr>
