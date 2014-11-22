@@ -52,6 +52,21 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/ranking">Ranking</a></code></nobr></td>
     <td>The rankings used at this tournament.</td>
   </tr>
+  <tr class="optional">
+    <th>level</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Level of tournament: "ms", "hs", "college", "open", "trash", "other"</td>
+  </tr>
+  <tr class="optional">
+    <th>difficulty</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Difficulty of tournament within respective level: "novice", "regular", "nationals"</td>
+  </tr>
+  <tr class="optional">
+    <th>question_set</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Free-form string of question set(s) used at this tournament.</td>
+  </tr>
 </tbody></table>
 
 ## TournamentSite object
