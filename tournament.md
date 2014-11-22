@@ -38,11 +38,6 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The tournament's end date, as an ISO 8601-formatted string in the tournament's local time zone.</td>
   </tr>
   <tr class="optional">
-    <th>first_playoff_round</th>
-    <td class="type">Number</td>
-    <td>The first round of this tournament's playoffs.</td>
-  </tr>
-  <tr class="optional">
     <th>registrations</th>
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/registration">Registration</a></code></nobr></td>
     <td>The organizations registered to play in this tournament.</td>
@@ -70,7 +65,7 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>place</th>
     <td class="type">String</td>
-    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site.</td>
+    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site, usually includes an address.</td>
   </tr>
   <tr class="optional">
     <th>latitude</th>
@@ -108,12 +103,12 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The standard number of tossups heard in a match. If omitted, assume <code>20</code>.</td>
   </tr>
   <tr class="optional">
-    <th>maximum_regulation_tossup_count</th>
+    <th>max_regulation_tossup_count</th>
     <td class="type">Number</td>
     <td>The maximum number of tossups heard in a match that does not go into overtime. (Different from <code>regulation_tossup_count</code> for tournaments that used timed matches.) If omitted, assume <code>20</code>.</td>
   </tr>
   <tr class="optional">
-    <th>minimum_overtime_question_count</th>
+    <th>min_overtime_question_count</th>
     <td class="type">Number</td>
     <td>The smallest possible number of overtime tossups or tossup-bonus cycles (as determined by <code>overtime_includes_bonuses</code>). If overtime is sudden death from the beginning, this will be <code>1</code>, and that is the value assumed if this field is omitted.</td>
   </tr>
@@ -128,7 +123,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The largest integer that is guaranteed to be a factor of a valid final score for one team in one match. If omitted, assume <code>5</code>. If present, must be a positive integer.</td>
   </tr>
   <tr class="optional">
-    <th>maximum_bonus_score</th>
+    <th>max_bonus_score</th>
     <td class="type">Number</td>
     <td>The maximum possible score on a single bonus. Omitting this means there are no bonuses. If present and <code>bonus_divisor</code> is present, must be divisible by <code>bonus_divisor</code>.</td>
   </tr>
@@ -143,12 +138,12 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a bonus that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>maximum_bonus_score</code> is present, assume <code>false</code>.</td>
   </tr>
   <tr class="optional">
-    <th>lightnings_per_team_per_match</th>
+    <th>lightning_count_per_team</th>
     <td class="type">Number</td>
     <td>The number of lightning rounds received by each team in each game. If omitted, assume <code>0</code>.</td>
   </tr>
   <tr class="optional">
-    <th>maximum_lightning_score</th>
+    <th>max_lightning_score</th>
     <td class="type">Number</td>
     <td>The maximum possible score on a single lightning round. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>100</code>.</td>
   </tr>
