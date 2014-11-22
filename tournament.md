@@ -67,6 +67,11 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type"><nobr>String</nobr></td>
     <td>Free-form string of question set(s) used at this tournament.</td>
   </tr>
+  <tr class="optional">
+    <th>info</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Free-form string other information relevant to tournament.</td>
+  </tr>
 </tbody></table>
 
 ## TournamentSite object
