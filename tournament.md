@@ -18,7 +18,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>An abbreviated version of the tournament's <code>name</code>. If omitted, assume the same as the <code>name</code>.</td>
   </tr>
   <tr class="optional">
-    <th>site</th>
+    <th>tournament_site</th>
     <td class="type">TournamentSite</td>
     <td>Where this tournament happened; see below.</td>
   </tr>
@@ -36,11 +36,6 @@ A `Tournament` object describes a tournament for which a single result is publis
     <th>end_date</th>
     <td class="type">String</td>
     <td>The tournament's end date, as an ISO 8601-formatted string in the tournament's local time zone.</td>
-  </tr>
-  <tr class="optional">
-    <th>first_playoff_round</th>
-    <td class="type">Number</td>
-    <td>The first round of this tournament's playoffs.</td>
   </tr>
   <tr class="optional">
     <th>registrations</th>
@@ -65,12 +60,12 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr>
     <th>name</th>
     <td class="type">String</td>
-    <td>The tournament site's name.</td>
+    <td>The tournament site's name (e.g. "Hyatt Regency O'Hare").</td>
   </tr>
   <tr class="optional">
     <th>place</th>
     <td class="type">String</td>
-    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site.</td>
+    <td>The location of the tournament. Free-form; the purpose is to enable people to find the site. An example might be "9300 Bryn Mawr Avenue, Rosemont, Illinois".</td>
   </tr>
   <tr class="optional">
     <th>latitude</th>

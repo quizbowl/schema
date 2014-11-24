@@ -8,12 +8,12 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
 
 <table class="fields"><tbody>
   <tr class="optional">
-    <th>tossups</th>
+    <th>tossups_read</th>
     <td class="type">Number</td>
     <td>The number of tossups read, <em>including</em> any tossups read in overtime.</td>
   </tr>
   <tr class="optional">
-    <th>overtime_tossups</th>
+    <th>overtime_tossups_read</th>
     <td class="type">Number</td>
     <td>The number of tossups read in overtime.</td>
   </tr>
@@ -35,7 +35,12 @@ A `Match` object describes a single match scheduled between two teams. A `Match`
   <tr class="required">
     <th>match_teams</th>
     <td class="type"><nobr>Array <code>MatchTeam</code></nobr></td>
-    <td>The performances of the teams in this match, see below.</td>
+    <td>The performances of the teams in this match; see below.</td>
+  </tr>
+  <tr class="optional">
+    <th>carryover_phases</th>
+    <td class="type"><nobr>Array <code>Phase</code></nobr></td>
+    <td>Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.</td>
   </tr>
 </tbody></table>
 
