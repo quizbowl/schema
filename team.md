@@ -33,9 +33,9 @@ A `Team` has a team name, other entry-specific information about the team that m
     <td>A <code><a href="{{ site.baseurl }}/ranking">Ranking</a></code> for which the team is eligible.</td>
   </tr>
   <tr class="optional">
-    <th>rank</th>
+    <th>position</th>
     <td class="type">Number</td>
-    <td>The rank the team has achieved among all teams eligible for the given Ranking. Omitting this field indicates that the rank has not been determined yet (e.g. because the tournament is still in progress) but the team is eligible for the Ranking. May not be unique (i.e., there may be a tie).</td>
+    <td>The position/rank the team has achieved among all teams eligible for the given Ranking. Omitting this field indicates that the rank has not been determined yet (e.g. because the tournament is still in progress) but the team is eligible for the Ranking. May not be unique (i.e., there may be a tie).</td>
   </tr>
 </tbody></table>
 

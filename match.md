@@ -57,7 +57,12 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>match_questions</th>
     <td class="type"><nobr>Array <code>MatchQuestion</code></nobr></td>
-    <td>The question-by-question account of what happened, see below.</td>
+    <td>The question-by-question account of what happened; see below.</td>
+  </tr>
+  <tr class="optional">
+    <th>notes</th>
+    <td class="type">String</td>
+    <td>Freeform text field to record any notes about the match, such as protests or questions read out of order.</td>
   </tr>
 </tbody></table>
 
@@ -113,12 +118,12 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>match_players</th>
     <td class="type"><nobr>Array <code>MatchPlayer</code></nobr></td>
-    <td>The performances of the players on this team, see below.</td>
+    <td>The performances of the players on this team; see below.</td>
   </tr>
   <tr class="optional">
     <th>lineups</th>
     <td class="type"><nobr>Array <code>Lineup</code></nobr></td>
-    <td>Which players were playing when, see below.</td>
+    <td>Which players were playing when; see below.</td>
   </tr>
   <tr class="optional">
     <th>suppress_from_statistics</th>
@@ -151,14 +156,19 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
 
 <table class="fields"><tbody>
   <tr class="required">
-    <th>firstQuestion</th>
+    <th>first_question</th>
     <td class="type">Number</td>
-    <td>Which question number this lineup heard first</td>
+    <td>Which question number this lineup heard first. The players in this lineup will be credited with hearing all tossups until another lineup takes precendence or until the end of the game, whichever comes first.</td>
   </tr>
   <tr class="required">
     <th>players</th>
     <td class="type"><nobr>Array <code>Player</code></nobr></td>
-    <td>Which players were in this lineup. This array's length is less than or equal to the <code>max_players_per_side</code> field from the tournament's <code>ScoringRules</code> object.</td>
+    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>max_players_per_side</code> field from the tournament's <code>ScoringRules</code> object.</td>
+  </tr>
+  <tr class="required">
+    <th>reason</th>
+    <td class="type">String</td>
+    <td>One of "initial", "own_timeout", "other_timeout", or "halftime", representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be 1.</td>
   </tr>
 </tbody></table>
 
@@ -170,18 +180,10 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td class="type">Number</td>
     <td>Number of questions answered for this many points.</td>
   </tr>
-  <tr class="optional">
-    <th>value</th>
-    <td class="type">Number</td>
-    <td>Point value per answer of this type.</td>
-  </tr>
-  <tr class="optional">
+  <tr class="required">
     <th>answer_type</th>
     <td class="type"><a href="{{ site.baseurl }}/answer_type">AnswerType</a></td>
     <td>For nonstandard question types, the particular details about this answer type.</td>
-  </tr>
-  <tr class="required annotation">
-    <td colspan="3">Exactly one of <code>value</code> or <code>answer_type</code> is required.</td>
   </tr>
 </tbody></table>
 
@@ -203,6 +205,11 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td class="type">Number</td>
     <td>How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus.</td>
   </tr>
+  <tr class="optional">
+    <th>bounceback_bonus_points</th>
+    <td class="type">Number</td>
+    <td>How many bonus points were awarded when this question's bonus bounced back. May be omitted if the question type doesn't award a bonus or if bonuses don't bounce back.</td>
+  </tr>
 </tbody></table>
 
 ## MatchQuestionBuzz object
@@ -210,17 +217,17 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
 <table class="fields"><tbody>
   <tr class="required">
     <th>team</th>
-    <td class="type"><code>Team</code></td>
+    <td class="type"><a href="{{ site.baseurl }}/team">Team</a></td>
     <td>Which team's player buzzed in.</td>
   </tr>
   <tr class="required">
     <th>player</th>
-    <td class="type"><code>Player</code></td>
+    <td class="type"><a href="{{ site.baseurl }}/player">Player</a></td>
     <td>Which player buzzed in.</td>
   </tr>
   <tr class="required">
     <th>result</th>
-    <td class="type"><code>AnswerType</code></td>
-    <td>How many points the player got for buzzing in.</td>
+    <td class="type"><a href="{{ site.baseurl }}/answer_type">AnswerType</a></td>
+    <td>The result of the player's buzz, representing how many points the player's team received.</td>
   </tr>
 </tbody></table>
