@@ -14,6 +14,19 @@ While we don't anticipate removing anything from this schema in the future, we m
 
 Start with the top-level [Tournament][tournament] object. You'll see how everything relates; note that while we include "to-one" and "to-many" relationships between objects, we do not include the inverse relationships, since they're not necessary for data interchange. Your app is welcome to model them.
 
+## Supported rule sets
+
+The schema supports matches conducted according to the following rule sets:
+
+* NAQT
+* Untimed NAQT
+* ACF
+* ACF with powers
+* PACE
+* Formats equivalent to any of the above with bounceback bonuses
+
+Other rule sets may be supported too. If you notice one missing from the above list, [let us know](https://github.com/puls/qb-schema/issues)!
+
 ## Serializing a tournament
 
 Once you've modeled all of your data, you may find yourself wanting to serialize it to a file and send it to somebody else. [Serialization][serialization] is on its own page.
