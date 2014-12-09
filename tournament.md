@@ -55,7 +55,7 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>level</th>
     <td class="type"><nobr>String</nobr></td>
-    <td>Level of tournament: "ms", "hs", "college", "open", "trash", "other"</td>
+    <td>Level of tournament: "middle_school", "high_school", "college", "open", "trash", or "other"</td>
   </tr>
   <tr class="optional">
     <th>difficulty</th>
