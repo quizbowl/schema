@@ -6,7 +6,7 @@ Here we present an object schema for describing a quizbowl tournament. Note that
 
 ## Current version: **1.0**
 
-At this point, the schema is **complete** for this stage of its life. Your feedback is welcome—it's [open source](http://github.com/puls/qb-schema)!
+At this point, the schema is **complete** for this stage of its life. Your feedback is welcome—it's [open source](http://github.com/quizbowl/schema)!
 
 While we don't anticipate removing anything from this schema in the future, we may add to it. We'll use [semantic versioning](http://semver.org); if any fields change names or anything is removed or any required fields are added, we'll increment the major version number. If optional fields are added, we'll increment the minor version number.
 
@@ -25,7 +25,7 @@ The schema supports matches conducted according to the following rule sets:
 * PACE
 * Formats equivalent to any of the above with bounceback bonuses
 
-Other rule sets may be supported too. If you notice one missing from the above list, [let us know](https://github.com/puls/qb-schema/issues)!
+Other rule sets may be supported too. If you notice one missing from the above list, [let us know](https://github.com/quizbowl/schema/issues)!
 
 ## Serializing a tournament
 
