@@ -177,7 +177,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type">Boolean</td>
     <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>true</code>.</td>
   </tr>
-  <tr class="optional">
+  <tr class="required">
     <th>answer_types</th>
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></nobr></td>
     <td>The different answer types possible in this tournament.</td>
