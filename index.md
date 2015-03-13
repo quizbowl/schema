@@ -4,9 +4,9 @@ title: Introduction
 ---
 Here we present an object schema for describing a quizbowl tournament. Note that this is about the necessary data to pass back and forth and get a full recounting of what happened; it does not attempt to be any type of database schema.
 
-## Current version: **1.0**
+## Current version: **1.1**
 
-At this point, the schema is **complete** for this stage of its life. Your feedback is welcome—it's [open source](http://github.com/quizbowl/schema)!
+Your feedback on the schema is welcome—it's [open source](http://github.com/quizbowl/schema)!
 
 While we don't anticipate removing anything from this schema in the future, we may add to it. We'll use [semantic versioning](http://semver.org); if any fields change names or anything is removed or any required fields are added, we'll increment the major version number. If optional fields are added, we'll increment the minor version number.
 
