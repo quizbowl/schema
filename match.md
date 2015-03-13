@@ -101,6 +101,11 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td colspan="3">It is invalid to provide both <code>points</code> and <code>bonus_points</code> since that could allow for inconsistent data. Generally, <code>bonus_points</code> is preferred; <code>points</code> is for results that do not include detailed (player-level) statistics.</td>
   </tr>
   <tr class="optional">
+    <th>correct_tossups_without_bonuses</th>
+    <td class="type">Number</td>
+    <td>The number of tossups this team answered correctly (in any form) without earning a bonus. Generally this occurs in overtime, but some formats may use tossups without bonuses in one phase of the game. This field can be used to correctly calculate points per bonus, whose denominator would be the total number of tossups heard by the time minus this field's value. For more complicated overtime scenarios (e.g. involving nonstandard <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code>s), you will need to create different <code>AnswerType</code>s with different values of <code>awards_bonus</code>.</td>
+  </tr>
+  <tr class="optional">
     <th>bonus_bounceback_points</th>
     <td class="type">Number</td>
     <td>The number of points this team earned on bonuses bounced back from the opponent.</td>
