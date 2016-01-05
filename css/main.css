@@ -448,5 +448,8 @@ table.fields tr.required.annotation td:before {
   content: "*"
 }
 table.fields tr.required th:after {
-  content: "*"
+  content: " [req]"
+}
+table.fields tr.optional th:after {
+  content: " [opt]"
 }
