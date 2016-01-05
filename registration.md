@@ -4,6 +4,8 @@ title: Registration
 ---
 A `Registration` object describes one school or other organization's entry into a tournament. It comprises the basic details about an organization and one or more [`Team`][team] objects.
 
+It is expected that each `Registration` object represents a distinct school or other organization. For instance, if "Anywhere High School" enters two teams, there should not be two `Registration` objects `name`d `Anywhere A` and `Anywhere B` and one `Team` child each, there should be one `Registration` object `name`d `Anywhere` (or `Anywhere High School`) and two `Team` children.
+
 ## Registration object
 
 <table class="fields"><tbody>
