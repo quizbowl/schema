@@ -22,8 +22,8 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type">TournamentSite</td>
     <td>Where this tournament happened; see below.</td>
   </tr>
-  <tr>
-    <th class="optional">scoring_rules</th>
+  <tr class="optional">
+    <th>scoring_rules</th>
     <td class="type">ScoringRules</td>
     <td>Validation rules for scoring matches in this tournament; see below.</td>
   </tr>
@@ -77,7 +77,7 @@ A `Tournament` object describes a tournament for which a single result is publis
 ## TournamentSite object
 
 <table class="fields"><tbody>
-  <tr>
+  <tr class="required">
     <th>name</th>
     <td class="type">String</td>
     <td>The tournament site's name (e.g. "Hyatt Regency O'Hare").</td>
