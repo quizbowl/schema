@@ -8,7 +8,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
 
 <table class="fields"><tbody>
   <tr>
-    <th>name</th>
+    <th class="required">name</th>
     <td class="type">String</td>
     <td>The name of the phase, such as "Preliminary Rounds" or "Playoffs".</td>
   </tr>
@@ -37,7 +37,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
 ## Round object
 
 <table class="fields"><tbody>
-  <tr>
+  <tr class="required">
     <th>name</th>
     <td class="type">String</td>
     <td>The name of the round. Possibly numerical; possibly something like "Preliminary Tiebreaker".</td>
@@ -64,7 +64,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
 A `Pool` object represents a set of teams that, in some meaningful sense, play together for the phase. They might be round-robin pools, playoff tiers, etc. It is not required that teams _only_ play matches within their pool.
 
 <table class="fields"><tbody>
-  <tr>
+  <tr class="required">
     <th>name</th>
     <td class="type">String</td>
     <td>The name of the pool.</td>
@@ -89,12 +89,12 @@ A `Pool` object represents a set of teams that, in some meaningful sense, play t
 ## PoolTeam object
 
 <table class="fields"><tbody>
-  <tr>
+  <tr class="required">
     <th>pool</th>
     <td class="type">Pool</td>
     <td>The Pool to which the Team is assigned.</td>
   </tr>
-  <tr>
+  <tr class="required">
     <th>team</th>
     <td class="type">Team</td>
     <td>The Team being assigned to the Pool.</td>
