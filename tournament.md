@@ -52,6 +52,26 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/ranking">Ranking</a></code></nobr></td>
     <td>The rankings used at this tournament.</td>
   </tr>
+  <tr class="optional">
+    <th>level</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Level of tournament: "middle_school", "high_school", "college", "open", "trash", or "other"</td>
+  </tr>
+  <tr class="optional">
+    <th>difficulty</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Difficulty of tournament within respective level: "novice", "regular", "nationals"</td>
+  </tr>
+  <tr class="optional">
+    <th>question_set</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Free-form string of question set(s) used at this tournament.</td>
+  </tr>
+  <tr class="optional">
+    <th>info</th>
+    <td class="type"><nobr>String</nobr></td>
+    <td>Free-form string of other information relevant to tournament.</td>
+  </tr>
 </tbody></table>
 
 ## TournamentSite object
@@ -93,7 +113,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The number of teams that participates in each match. If omitted, assume <code>2</code>.</td>
   </tr>
   <tr class="optional">
-    <th>max_players_per_side</th>
+    <th>maximum_players_per_team</th>
     <td class="type">Number</td>
     <td>The maximum number of players that may be active at once, per team, in a match. If omitted, assume <code>4</code>.</td>
   </tr>
@@ -138,7 +158,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a bonus that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>maximum_bonus_score</code> is present, assume <code>false</code>.</td>
   </tr>
   <tr class="optional">
-    <th>lightnings_per_team_per_match</th>
+    <th>lightning_count_per_team</th>
     <td class="type">Number</td>
     <td>The number of lightning rounds received by each team in each game. If omitted, assume <code>0</code>.</td>
   </tr>
@@ -157,7 +177,7 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td class="type">Boolean</td>
     <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>true</code>.</td>
   </tr>
-  <tr class="optional">
+  <tr class="required">
     <th>answer_types</th>
     <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></nobr></td>
     <td>The different answer types possible in this tournament.</td>

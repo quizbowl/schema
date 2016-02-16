@@ -168,7 +168,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="required">
     <th>players</th>
     <td class="type"><nobr>Array <code>Player</code></nobr></td>
-    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>max_players_per_side</code> field from the tournament's <code>ScoringRules</code> object.</td>
+    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>maximum_players_per_team</code> field from the tournament's <code>ScoringRules</code> object.</td>
   </tr>
   <tr class="required">
     <th>reason</th>
