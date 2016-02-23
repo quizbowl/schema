@@ -173,7 +173,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="required">
     <th>reason</th>
     <td class="type">String</td>
-    <td>One of "initial", "own_timeout", "other_timeout", or "halftime", representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be 1.</td>
+    <td>One of `initial`, `own_timeout`, `other_timeout`, or `halftime`, representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be `1`.</td>
   </tr>
 </tbody></table>
 
