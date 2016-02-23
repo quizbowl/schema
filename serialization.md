@@ -50,539 +50,3570 @@ In the interest of incremental data transfer, it is *not* considered an data for
 That's a lot of really specific-sounding technical jargon. But the whole format plays out pretty straightforwardly in practice. Here's an example of a very small tournament, also available [for download](/test.qbj.zip):
 
     {
-      "version": "0.5",
+      "version": "1.1",
       "objects": [
         {
-          "forfeit": false,
-          "id": "game_1_damascus_verbank",
-          "location": "o",
-          "match_teams": [
+          "id": "school_lake_worth",
+          "type": "Registration",
+          "name": "Lake Worth",
+          "teams": [
             {
-              "match_players": [
+              "id": "team_887039",
+              "name": "Lake Worth A",
+              "players": [
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 3},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Merl Hackett"},
-                  "tossups_heard": 19
+                  "id": "player_634094",
+                  "name": "Raquel Kuvalis",
+                  "year": 11
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Maeve Beatty"},
-                  "tossups_heard": 19
+                  "id": "player_443048",
+                  "name": "Selina Koch",
+                  "year": 12
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 3},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Riley McKenzie"},
-                  "tossups_heard": 19
+                  "id": "player_833136",
+                  "name": "Daryl Lind",
+                  "year": 12
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 2}
-                  ],
-                  "player": {"name": "Trevion Goldner"},
-                  "tossups_heard": 19
+                  "id": "player_676301",
+                  "name": "Keira Anderson",
+                  "year": 12
+                },
+                {
+                  "id": "player_578732",
+                  "name": "Stephania Davis",
+                  "year": 11
+                },
+                {
+                  "id": "player_354730",
+                  "name": "Jeff Spinka",
+                  "year": 9
                 }
-              ],
-              "points": 260,
-              "team": {"$ref": "team_962512"}
-            },
-            {
-              "match_players": [
-                {
-                  "answer_counts": [
-                    {"value": 10, "number": 0},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Vincenza Sawayn"},
-                  "tossups_heard": 19
-                },
-                {
-                  "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 2},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Sage Purdy"},
-                  "tossups_heard": 19
-                },
-                {
-                  "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Aurelie Hyatt"},
-                  "tossups_heard": 19
-                },
-                {
-                  "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Otto Steuber"},
-                  "tossups_heard": 19
-                }
-              ],
-              "points": 150,
-              "team": {"$ref": "team_717039"}
+              ]
             }
-          ],
-          "overtimeTossups": 0,
-          "round": 1,
-          "serial": "1-2",
-          "tossups": 19,
-          "type": "Match"
+          ]
         },
         {
-          "forfeit": false,
-          "id": "game_1_huntington_new_albany",
-          "location": "C",
-          "match_teams": [
+          "id": "school_lomax",
+          "type": "Registration",
+          "name": "Lomax",
+          "teams": [
             {
-              "match_players": [
+              "id": "team_416211",
+              "name": "Lomax A",
+              "players": [
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 3},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Zola Howe"},
-                  "tossups_heard": 23
+                  "id": "player_182776",
+                  "name": "Clarabelle Fadel",
+                  "year": 9
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 0},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Davion Hilll"},
-                  "tossups_heard": 23
+                  "id": "player_8995",
+                  "name": "Flo Ondricka",
+                  "year": 12
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 4},
-                    {"value": 15, "number": 3},
-                    {"value": -5, "number": 3}
-                  ],
-                  "player": {"name": "Art Stehr"},
-                  "tossups_heard": 23
+                  "id": "player_400431",
+                  "name": "Earline Connelly",
+                  "year": 10
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 3},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Curtis Harann"},
-                  "tossups_heard": 23
+                  "id": "player_969981",
+                  "name": "Morgan Torp",
+                  "year": 11
+                },
+                {
+                  "id": "player_556637",
+                  "name": "Melyssa Nikolaus",
+                  "year": 9
                 }
-              ],
-              "points": 345,
-              "team": {"$ref": "team_607932"}
+              ]
             },
             {
-              "match_players": [
+              "id": "team_985424",
+              "name": "Lomax B",
+              "players": [
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Myriam Kautzer"},
-                  "tossups_heard": 23
+                  "id": "player_289629",
+                  "name": "Charlotte Berge",
+                  "year": 11
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Mckenzie Ledner"},
-                  "tossups_heard": 23
+                  "id": "player_644465",
+                  "name": "Chelsey Cartwright",
+                  "year": 10
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 2}
-                  ],
-                  "player": {"name": "Kiel King"},
-                  "tossups_heard": 23
+                  "id": "player_999928",
+                  "name": "Laurie Thiel",
+                  "year": 11
                 },
                 {
-                  "answer_counts": [
-                    {"value": 10, "number": 4},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 2}
-                  ],
-                  "player": {"name": "Alisha Hilll"},
-                  "tossups_heard": 23
+                  "id": "player_571162",
+                  "name": "Rene Abernathy",
+                  "year": 10
+                },
+                {
+                  "id": "player_179810",
+                  "name": "Wilburn McGlynn",
+                  "year": 12
                 }
-              ],
-              "points": 200,
-              "team": {"$ref": "team_11459"}
+              ]
+            },
+            {
+              "id": "team_190740",
+              "name": "Lomax C",
+              "players": [
+                {
+                  "id": "player_791350",
+                  "name": "Zechariah Yundt",
+                  "year": 12
+                },
+                {
+                  "id": "player_630847",
+                  "name": "Angelina Denesik",
+                  "year": 11
+                },
+                {
+                  "id": "player_774971",
+                  "name": "Emie Goodwin",
+                  "year": 9
+                },
+                {
+                  "id": "player_902051",
+                  "name": "Macie Carter",
+                  "year": 11
+                },
+                {
+                  "id": "player_14538",
+                  "name": "Tyreek Abbott",
+                  "year": 11
+                },
+                {
+                  "id": "player_393738",
+                  "name": "Asha Hessel",
+                  "year": 9
+                },
+                {
+                  "id": "player_479053",
+                  "name": "Candelario Ortiz",
+                  "year": 10
+                }
+              ]
             }
-          ],
-          "overtimeTossups": 0,
-          "round": 1,
+          ]
+        },
+        {
+          "id": "game_1_lake_worth_a_lomax_b",
+          "type": "Match",
+          "tossups_read": 21,
+          "overtime_tossups_read": 0,
+          "location": "Room 1",
           "serial": "1-1",
-          "tossups": 23,
-          "type": "Match"
-        },
-        {
-          "forfeit": false,
-          "id": "game_2_damascus_new_albany",
-          "location": "C",
+          "moderator": "Q. Q*bert Hentzel",
+          "scorekeeper": "Foley, which is an app",
           "match_teams": [
             {
+              "team": {
+                "$ref": "team_887039"
+              },
+              "points": 335,
               "match_players": [
                 {
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "tossups_heard": 11,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 2},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Merl Hackett"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_578732"
+                  },
+                  "tossups_heard": 11,
                   "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Maeve Beatty"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "tossups_heard": 21,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Riley McKenzie"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 4
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "tossups_heard": 21,
                   "answer_counts": [
-                    {"value": 10, "number": 5},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Trevion Goldner"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_354730"
+                  },
+                  "tossups_heard": 0,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "tossups_heard": 20,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 }
               ],
-              "points": 285,
-              "team": {"$ref": "team_962512"}
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_634094"
+                    },
+                    {
+                      "$ref": "player_443048"
+                    },
+                    {
+                      "$ref": "player_833136"
+                    },
+                    {
+                      "$ref": "player_676301"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 11,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_634094"
+                    },
+                    {
+                      "$ref": "player_443048"
+                    },
+                    {
+                      "$ref": "player_676301"
+                    },
+                    {
+                      "$ref": "player_578732"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 21,
+                  "reason": "own_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_833136"
+                    },
+                    {
+                      "$ref": "player_578732"
+                    },
+                    {
+                      "$ref": "player_676301"
+                    },
+                    {
+                      "$ref": "player_634094"
+                    }
+                  ]
+                }
+              ]
             },
             {
+              "team": {
+                "$ref": "team_985424"
+              },
+              "points": 125,
               "match_players": [
                 {
+                  "player": {
+                    "$ref": "player_179810"
+                  },
+                  "tossups_heard": 11,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Myriam Kautzer"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "tossups_heard": 21,
                   "answer_counts": [
-                    {"value": 10, "number": 4},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Mckenzie Ledner"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "tossups_heard": 21,
                   "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Kiel King"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 2
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "tossups_heard": 11,
                   "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Alisha Hilll"},
-                  "tossups_heard": 22
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 2
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "tossups_heard": 20,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 }
               ],
-              "points": 290,
-              "team": {"$ref": "team_11459"}
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_289629"
+                    },
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    },
+                    {
+                      "$ref": "player_571162"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 11,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_179810"
+                    },
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_571162"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 21,
+                  "reason": "other_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_179810"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    },
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_289629"
+                    }
+                  ]
+                }
+              ]
             }
           ],
-          "overtimeTossups": 0,
-          "round": 2,
-          "serial": "2-1",
-          "tossups": 22,
-          "type": "Match"
+          "match_questions": [
+            {
+              "question_number": 1,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 2,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 3,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 4,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 5,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 6,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 7,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 8,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 9,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 10,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 11,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_179810"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 12,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 13,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 14,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_578732"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 15,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 16,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 17,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 18,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 19,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 20,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 21,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
-          "forfeit": false,
-          "id": "game_2_huntington_verbank",
-          "location": "o",
+          "id": "game_1_lomax_a_lomax_c",
+          "type": "Match",
+          "tossups_read": 24,
+          "overtime_tossups_read": 0,
+          "location": "Room 0",
+          "serial": "1-2",
+          "moderator": "Q. Q*bert Hentzel",
+          "scorekeeper": "Foley, which is an app",
           "match_teams": [
             {
+              "team": {
+                "$ref": "team_416211"
+              },
+              "points": 305,
               "match_players": [
                 {
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "tossups_heard": 24,
                   "answer_counts": [
-                    {"value": 10, "number": 3},
-                    {"value": 15, "number": 2},
-                    {"value": -5, "number": 2}
-                  ],
-                  "player": {"name": "Zola Howe"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "tossups_heard": 22,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Davion Hilll"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "tossups_heard": 24,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Art Stehr"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 4
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_556637"
+                  },
+                  "tossups_heard": 14,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 2},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Curtis Harann"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 2
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_8995"
+                  },
+                  "tossups_heard": 12,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 }
               ],
-              "points": 325,
-              "team": {"$ref": "team_607932"}
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_182776"
+                    },
+                    {
+                      "$ref": "player_8995"
+                    },
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 11,
+                  "reason": "other_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_8995"
+                    },
+                    {
+                      "$ref": "player_556637"
+                    },
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 13,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_182776"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    },
+                    {
+                      "$ref": "player_556637"
+                    }
+                  ]
+                }
+              ]
             },
             {
+              "team": {
+                "$ref": "team_190740"
+              },
+              "points": 200,
               "match_players": [
                 {
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "tossups_heard": 24,
                   "answer_counts": [
-                    {"value": 10, "number": 1},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Vincenza Sawayn"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "tossups_heard": 24,
                   "answer_counts": [
-                    {"value": 10, "number": 2},
-                    {"value": 15, "number": 0},
-                    {"value": -5, "number": 0}
-                  ],
-                  "player": {"name": "Sage Purdy"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_14538"
+                  },
+                  "tossups_heard": 12,
                   "answer_counts": [
-                    {"value": 10, "number": 0},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 2}
-                  ],
-                  "player": {"name": "Aurelie Hyatt"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
+                  "player": {
+                    "$ref": "player_774971"
+                  },
+                  "tossups_heard": 24,
                   "answer_counts": [
-                    {"value": 10, "number": 0},
-                    {"value": 15, "number": 1},
-                    {"value": -5, "number": 1}
-                  ],
-                  "player": {"name": "Otto Steuber"},
-                  "tossups_heard": 19
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "tossups_heard": 12,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_393738"
+                  },
+                  "tossups_heard": 0,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_479053"
+                  },
+                  "tossups_heard": 0,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 }
               ],
-              "points": 145,
-              "team": {"$ref": "team_717039"}
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_791350"
+                    },
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_774971"
+                    },
+                    {
+                      "$ref": "player_902051"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 11,
+                  "reason": "own_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_774971"
+                    },
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_902051"
+                    },
+                    {
+                      "$ref": "player_791350"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 13,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_902051"
+                    },
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_14538"
+                    },
+                    {
+                      "$ref": "player_774971"
+                    }
+                  ]
+                }
+              ]
             }
           ],
-          "overtimeTossups": 0,
-          "round": 2,
+          "match_questions": [
+            {
+              "question_number": 1,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_8995"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 2,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 3,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 4,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 5,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 6,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 7,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 8,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 9,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_774971"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 10,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 11,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 12,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_8995"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 13,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 14,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 15,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 16,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 17,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 18,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 19,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 20,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_556637"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 21,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_14538"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 22,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_556637"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_774971"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 23,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 24,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "game_2_lomax_b_lake_worth_a",
+          "type": "Match",
+          "tossups_read": 19,
+          "overtime_tossups_read": 0,
+          "location": "Room 0",
           "serial": "2-2",
-          "tossups": 19,
-          "type": "Match"
-        },
-        {
-          "id": "school_damascus",
-          "name": "Damascus",
-          "teams": [
+          "moderator": "Q. Q*bert Hentzel",
+          "scorekeeper": "Foley, which is an app",
+          "match_teams": [
             {
-              "id": "team_962512",
-              "name": "Damascus",
-              "players": [
+              "team": {
+                "$ref": "team_985424"
+              },
+              "points": 215,
+              "match_players": [
                 {
-                  "id": "player_413233",
-                  "name": "Merl Hackett",
-                  "year": 11
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "tossups_heard": 19,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
-                  "id": "player_290096",
-                  "name": "Maeve Beatty",
-                  "year": 11
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "tossups_heard": 19,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
-                  "id": "player_961411",
-                  "name": "Riley McKenzie",
-                  "year": 10
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "tossups_heard": 19,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
                 },
                 {
-                  "id": "player_186850",
-                  "name": "Trevion Goldner",
-                  "year": 12
+                  "player": {
+                    "$ref": "player_179810"
+                  },
+                  "tossups_heard": 10,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "tossups_heard": 9,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                }
+              ],
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_289629"
+                    },
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    },
+                    {
+                      "$ref": "player_571162"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 7,
+                  "reason": "other_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_289629"
+                    },
+                    {
+                      "$ref": "player_571162"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 10,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_644465"
+                    },
+                    {
+                      "$ref": "player_571162"
+                    },
+                    {
+                      "$ref": "player_999928"
+                    },
+                    {
+                      "$ref": "player_179810"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "team": {
+                "$ref": "team_887039"
+              },
+              "points": 265,
+              "match_players": [
+                {
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "tossups_heard": 16,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_354730"
+                  },
+                  "tossups_heard": 13,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "tossups_heard": 19,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "tossups_heard": 19,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "tossups_heard": 9,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_578732"
+                  },
+                  "tossups_heard": 0,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                }
+              ],
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_634094"
+                    },
+                    {
+                      "$ref": "player_443048"
+                    },
+                    {
+                      "$ref": "player_833136"
+                    },
+                    {
+                      "$ref": "player_676301"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 7,
+                  "reason": "own_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_354730"
+                    },
+                    {
+                      "$ref": "player_443048"
+                    },
+                    {
+                      "$ref": "player_833136"
+                    },
+                    {
+                      "$ref": "player_634094"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 10,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_676301"
+                    },
+                    {
+                      "$ref": "player_354730"
+                    },
+                    {
+                      "$ref": "player_833136"
+                    },
+                    {
+                      "$ref": "player_443048"
+                    }
+                  ]
                 }
               ]
             }
           ],
-          "type": "Registration"
+          "match_questions": [
+            {
+              "question_number": 1,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 2,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 3,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 4,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 5,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 6,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_634094"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 7,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 8,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 9,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_289629"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 10,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 11,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_999928"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 12,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 13,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_571162"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 14,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_354730"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 15,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_443048"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 16,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 17,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_676301"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 18,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_985424"
+                  },
+                  "player": {
+                    "$ref": "player_644465"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 19,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_887039"
+                  },
+                  "player": {
+                    "$ref": "player_833136"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "school_huntington",
-          "name": "Huntington",
-          "teams": [
+          "id": "game_2_lomax_c_lomax_a",
+          "type": "Match",
+          "tossups_read": 23,
+          "overtime_tossups_read": 0,
+          "location": "Room 1",
+          "serial": "2-1",
+          "moderator": "Q. Q*bert Hentzel",
+          "scorekeeper": "Foley, which is an app",
+          "match_teams": [
             {
-              "id": "team_607932",
-              "name": "Huntington",
-              "players": [
+              "team": {
+                "$ref": "team_190740"
+              },
+              "points": 295,
+              "match_players": [
                 {
-                  "id": "player_816763",
-                  "name": "Zola Howe",
-                  "year": 12
+                  "player": {
+                    "$ref": "player_393738"
+                  },
+                  "tossups_heard": 12,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
-                  "id": "player_413172",
-                  "name": "Davion Hilll",
-                  "year": 12
+                  "player": {
+                    "$ref": "player_774971"
+                  },
+                  "tossups_heard": 17,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
-                  "id": "player_477641",
-                  "name": "Art Stehr",
-                  "year": 11
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "tossups_heard": 23,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
                 },
                 {
-                  "id": "player_706462",
-                  "name": "Curtis Harann",
-                  "year": 11
+                  "player": {
+                    "$ref": "player_479053"
+                  },
+                  "tossups_heard": 18,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "tossups_heard": 11,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "tossups_heard": 11,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_14538"
+                  },
+                  "tossups_heard": 0,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                }
+              ],
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_791350"
+                    },
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_774971"
+                    },
+                    {
+                      "$ref": "player_902051"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 6,
+                  "reason": "own_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_791350"
+                    },
+                    {
+                      "$ref": "player_902051"
+                    },
+                    {
+                      "$ref": "player_479053"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 12,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_393738"
+                    },
+                    {
+                      "$ref": "player_774971"
+                    },
+                    {
+                      "$ref": "player_630847"
+                    },
+                    {
+                      "$ref": "player_479053"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "team": {
+                "$ref": "team_416211"
+              },
+              "points": 260,
+              "match_players": [
+                {
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "tossups_heard": 23,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "tossups_heard": 23,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 2
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 3
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_556637"
+                  },
+                  "tossups_heard": 12,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "tossups_heard": 23,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 3
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 1
+                    }
+                  ]
+                },
+                {
+                  "player": {
+                    "$ref": "player_8995"
+                  },
+                  "tossups_heard": 11,
+                  "answer_counts": [
+                    {
+                      "answer_type": {
+                        "value": 10
+                      },
+                      "number": 1
+                    },
+                    {
+                      "answer_type": {
+                        "value": 15
+                      },
+                      "number": 0
+                    },
+                    {
+                      "answer_type": {
+                        "value": -5
+                      },
+                      "number": 0
+                    }
+                  ]
+                }
+              ],
+              "lineups": [
+                {
+                  "first_question": 1,
+                  "reason": "initial",
+                  "players": [
+                    {
+                      "$ref": "player_182776"
+                    },
+                    {
+                      "$ref": "player_8995"
+                    },
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 6,
+                  "reason": "other_timeout",
+                  "players": [
+                    {
+                      "$ref": "player_182776"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    },
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_8995"
+                    }
+                  ]
+                },
+                {
+                  "first_question": 12,
+                  "reason": "halftime",
+                  "players": [
+                    {
+                      "$ref": "player_400431"
+                    },
+                    {
+                      "$ref": "player_182776"
+                    },
+                    {
+                      "$ref": "player_556637"
+                    },
+                    {
+                      "$ref": "player_969981"
+                    }
+                  ]
                 }
               ]
             }
           ],
-          "type": "Registration"
-        },
-        {
-          "id": "school_new_albany",
-          "name": "New Albany",
-          "teams": [
+          "match_questions": [
             {
-              "id": "team_11459",
-              "name": "New Albany",
-              "players": [
+              "question_number": 1,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 2,
+              "bonus_points": 30,
+              "buzzes": [
                 {
-                  "id": "player_440854",
-                  "name": "Myriam Kautzer",
-                  "year": 12
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 3,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_8995"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 4,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": -5
+                  }
                 },
                 {
-                  "id": "player_440428",
-                  "name": "Mckenzie Ledner",
-                  "year": 9
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 5,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 6,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 7,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_902051"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 8,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": -5
+                  }
                 },
                 {
-                  "id": "player_56643",
-                  "name": "Kiel King",
-                  "year": 10
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 9,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_791350"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 10,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": -5
+                  }
                 },
                 {
-                  "id": "player_634960",
-                  "name": "Alisha Hilll",
-                  "year": 9
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 11,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 12,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": -5
+                  }
+                },
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_393738"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 13,
+              "bonus_points": 10,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_182776"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 14,
+              "bonus_points": 0,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 15,
+              "bonus_points": 0,
+              "buzzes": []
+            },
+            {
+              "question_number": 16,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 17,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_479053"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 18,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 19,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_774971"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 20,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_556637"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 21,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_190740"
+                  },
+                  "player": {
+                    "$ref": "player_630847"
+                  },
+                  "result": {
+                    "value": 15
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 22,
+              "bonus_points": 20,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_400431"
+                  },
+                  "result": {
+                    "value": 10
+                  }
+                }
+              ]
+            },
+            {
+              "question_number": 23,
+              "bonus_points": 30,
+              "buzzes": [
+                {
+                  "team": {
+                    "$ref": "team_416211"
+                  },
+                  "player": {
+                    "$ref": "player_969981"
+                  },
+                  "result": {
+                    "value": 10
+                  }
                 }
               ]
             }
-          ],
-          "type": "Registration"
+          ]
         },
         {
-          "id": "school_verbank",
-          "name": "Verbank",
-          "teams": [
-            {
-              "id": "team_717039",
-              "name": "Verbank",
-              "players": [
-                {
-                  "id": "player_334028",
-                  "name": "Vincenza Sawayn",
-                  "year": 11
-                },
-                {
-                  "id": "player_110388",
-                  "name": "Sage Purdy",
-                  "year": 10
-                },
-                {
-                  "id": "player_627078",
-                  "name": "Aurelie Hyatt",
-                  "year": 10
-                },
-                {
-                  "id": "player_535588",
-                  "name": "Otto Steuber",
-                  "year": 12
-                }
-              ]
-            }
-          ],
-          "type": "Registration"
-        },
-        {
-          "matches": [
-            {"$ref": "game_1_damascus_verbank"},
-            {"$ref": "game_1_huntington_new_albany"},
-            {"$ref": "game_2_damascus_new_albany"},
-            {"$ref": "game_2_huntington_verbank"}
-          ],
           "name": "Test Tournament",
-          "registrations": [
-            {"$ref": "school_damascus"},
-            {"$ref": "school_huntington"},
-            {"$ref": "school_new_albany"},
-            {"$ref": "school_verbank"}
+          "type": "Tournament",
+          "phases": [
+            {
+              "name": "All Matches",
+              "rounds": [
+                {
+                  "name": "Round 1",
+                  "matches": [
+                    {
+                      "$ref": "game_1_lake_worth_a_lomax_b"
+                    },
+                    {
+                      "$ref": "game_1_lomax_a_lomax_c"
+                    }
+                  ]
+                },
+                {
+                  "name": "Round 2",
+                  "matches": [
+                    {
+                      "$ref": "game_2_lomax_b_lake_worth_a"
+                    },
+                    {
+                      "$ref": "game_2_lomax_c_lomax_a"
+                    }
+                  ]
+                }
+              ]
+            }
           ],
-          "type": "Tournament"
+          "registrations": [
+            {
+              "$ref": "school_lake_worth"
+            },
+            {
+              "$ref": "school_lomax"
+            }
+          ]
         }
       ]
     }
