@@ -12,7 +12,7 @@ All of the data types in the schema for an object are either native JSON data ty
 
 Indeed, native JSON data types serialize as you would expect in JSON; object types defined here serialize as JSON objects with a few extra fields.
 
-The top level of the JSON file **must** be an object with keys for `version`, which is "1.1", and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
+The top level of the JSON file **must** be an object with keys for `version` (the current version is `1.2`), and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
 
 The file's extension should be `.qbj` and its MIME type should be `application/vnd.quizbowl.qbj+json`.
 
@@ -50,7 +50,7 @@ In the interest of incremental data transfer, it is *not* considered an data for
 That's a lot of really specific-sounding technical jargon. But the whole format plays out pretty straightforwardly in practice. Here's an example of a very small tournament, also available [for download](/test.qbj.zip):
 
     {
-      "version": "1.1",
+      "version": "1.2",
       "objects": [
         {
           "id": "school_lake_worth",
