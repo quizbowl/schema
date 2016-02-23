@@ -173,7 +173,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="required">
     <th>reason</th>
     <td class="type">String</td>
-    <td>One of "initial", "own_timeout", "other_timeout", or "halftime", representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be 1.</td>
+    <td>One of `initial`, `own_timeout`, `other_timeout`, `halftime`, `segment_break`, or `before_overtime`, representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be `1`. The `segment_break` option represents a moment between portions of a match such as the end of the first quarter in a four-quarter format. `halftime` can be thought of as equivalent to `segment_break` for the common case of match formats whose regulation segments are simply two halves. `before_overtime` can be thought of as a special case of `segment_break`.</td>
   </tr>
 </tbody></table>
 
