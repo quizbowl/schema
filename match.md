@@ -25,6 +25,11 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td>The location of the match. Probably a room name.</td>
   </tr>
   <tr class="optional">
+    <th>packets</th>
+    <td class="type">String</td>
+    <td>The packet(s) used for the match <em>if</em> different from that implied by the `packet` field of the `Round` containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.</td>
+  </tr>
+  <tr class="optional">
     <th>tiebreaker</th>
     <td class="type">Boolean</td>
     <td>Was the match a tiebreaker match?</td>
