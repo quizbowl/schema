@@ -51,17 +51,17 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>match_teams</th>
-    <td class="type"><nobr>Array <code>MatchTeam</code></nobr></td>
+    <td class="type">Array&nbsp;`MatchTeam`</td>
     <td>The performances of the teams in this match; see below.</td>
   </tr>
   <tr class="optional">
     <th>carryover_phases</th>
-    <td class="type"><nobr>Array <code>Phase</code></nobr></td>
+    <td class="type">Array&nbsp;`Phase`</td>
     <td>Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.</td>
   </tr>
   <tr class="optional">
     <th>match_questions</th>
-    <td class="type"><nobr>Array <code>MatchQuestion</code></nobr></td>
+    <td class="type">Array&nbsp;`MatchQuestion`</td>
     <td>The question-by-question account of what happened; see below.</td>
   </tr>
   <tr class="optional">
@@ -127,12 +127,12 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="optional">
     <th>match_players</th>
-    <td class="type"><nobr>Array <code>MatchPlayer</code></nobr></td>
+    <td class="type">Array&nbsp;`MatchPlayer`</td>
     <td>The performances of the players on this team; see below.</td>
   </tr>
   <tr class="optional">
     <th>lineups</th>
-    <td class="type"><nobr>Array <code>Lineup</code></nobr></td>
+    <td class="type">Array&nbsp;`Lineup`</td>
     <td>Which players were playing when; see below.</td>
   </tr>
   <tr class="optional">
@@ -157,7 +157,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>answer_counts</th>
-    <td class="type"><nobr>Array <code>PlayerAnswerCount</code></nobr></td>
+    <td class="type">Array&nbsp;`PlayerAnswerCount`</td>
     <td>The number of this player's answers for each answer value.</td>
   </tr>
 </tbody></table>
@@ -172,8 +172,8 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>players</th>
-    <td class="type"><nobr>Array <code>Player</code></nobr></td>
-    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>maximum_players_per_team</code> field from the tournament's <code>ScoringRules</code> object.</td>
+    <td class="type">Array&nbsp;`Player`</td>
+    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the `maximum_players_per_team` field from the tournament's `ScoringRules` object.</td>
   </tr>
   <tr class="required">
     <th>reason</th>
@@ -207,7 +207,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>buzzes</th>
-    <td class="type"><nobr>Array <code>MatchQuestionBuzz</code></nobr></td>
+    <td class="type">Array&nbsp;`MatchQuestionBuzz`</td>
     <td>The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.</td>
   </tr>
   <tr class="optional">

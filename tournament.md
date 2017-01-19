@@ -39,37 +39,37 @@ A `Tournament` object describes a tournament for which a single result is publis
   </tr>
   <tr class="optional">
     <th>registrations</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/registration">Registration</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/registration">Registration</a>`</td>
     <td>The organizations registered to play in this tournament.</td>
   </tr>
   <tr class="optional">
     <th>phases</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/phase">Phase</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/phase">Phase</a>`</td>
     <td>The phases of play in this tournament.</td>
   </tr>
   <tr class="optional">
     <th>rankings</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/ranking">Ranking</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/ranking">Ranking</a>`</td>
     <td>The rankings used at this tournament.</td>
   </tr>
   <tr class="optional">
     <th>level</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Level of tournament: "middle_school", "high_school", "college", "open", "trash", or "other"</td>
   </tr>
   <tr class="optional">
     <th>difficulty</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Difficulty of tournament within respective level: "novice", "regular", "nationals"</td>
   </tr>
   <tr class="optional">
     <th>question_set</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Free-form string of question set(s) used at this tournament.</td>
   </tr>
   <tr class="optional">
     <th>info</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Free-form string of other information relevant to tournament.</td>
   </tr>
 </tbody></table>
@@ -179,7 +179,7 @@ A `Tournament` object describes a tournament for which a single result is publis
   </tr>
   <tr class="required">
     <th>answer_types</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/answer_type">AnswerType</a>`</td>
     <td>The different answer types possible in this tournament.</td>
   </tr>
 </tbody></table>

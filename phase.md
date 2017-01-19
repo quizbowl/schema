@@ -19,7 +19,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
   <tr class="optional">
     <th>rounds</th>
-    <td class="type"><nobr>Array <code>Round</code></nobr></td>
+    <td class="type">Array&nbsp;`Round`</td>
     <td>The rounds within this phase.</td>
   </tr>
   <tr class="optional">
@@ -29,7 +29,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
   <tr class="optional">
     <th>pools</th>
-    <td class="type"><nobr>Array <code>Pool</code></nobr></td>
+    <td class="type">Array&nbsp;`Pool`</td>
     <td>The pools (or similar structures) into which teams are placed for this phase.</td>
   </tr>
 </tbody></table>
@@ -54,7 +54,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
   <tr class="optional">
     <th>matches</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/match">Match</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/match">Match</a>`</td>
     <td>The matches that took place in this round.</td>
   </tr>
 </tbody></table>
@@ -81,7 +81,7 @@ A `Pool` object represents a set of teams that, in some meaningful sense, play t
   </tr>
   <tr class="optional">
     <th>pool_teams</th>
-    <td class="type"><nobr>Array <code>PoolTeam</code></nobr></td>
+    <td class="type">Array&nbsp;`PoolTeam`</td>
     <td>The assignments of teams to pools for this phase.</td>
   </tr>
 </tbody></table>
