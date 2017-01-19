@@ -47,7 +47,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>serial</th>
     <td class="type">String</td>
-    <td>"For control room use only" type serial number.</td>
+    <td>"For control room use only"-type serial number.</td>
   </tr>
   <tr class="required">
     <th>match_teams</th>
