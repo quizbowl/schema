@@ -165,17 +165,17 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>maximum_lightning_score</th>
     <td class="type">Number</td>
-    <td>The maximum possible score on a single lightning round. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>100</code>.</td>
+    <td>The maximum possible score on a single lightning round. If omitted but `lightning_count_per_team` is present and positive, assume `100`.</td>
   </tr>
   <tr class="optional">
     <th>lightning_divisor</th>
     <td class="type">Number</td>
-    <td>The largest integer that is guaranteed to be a factor of a valid score on a single lightning round. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>10</code>. If present, must be a positive integer.</td>
+    <td>The largest integer that is guaranteed to be a factor of a valid score on a single lightning round. If omitted but `lightning_count_per_team` is present and positive, assume `10`. If present, must be a positive integer.</td>
   </tr>
   <tr class="optional">
     <th>lightnings_bounce_back</th>
     <td class="type">Boolean</td>
-    <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>true</code>.</td>
+    <td>`true` if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; `false` if not. If omitted but `lightning_count_per_team` is present and positive, assume `true`.</td>
   </tr>
   <tr class="required">
     <th>answer_types</th>
