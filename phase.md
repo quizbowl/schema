@@ -50,7 +50,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   <tr class="optional">
     <th>packets</th>
     <td class="type">String</td>
-    <td>Free-form information on what packet(s) were used in this round.</td>
+    <td>Free-form information on what packet(s) were used in this round. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).</td>
   </tr>
   <tr class="optional">
     <th>matches</th>

@@ -25,6 +25,11 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td>The location of the match. Probably a room name.</td>
   </tr>
   <tr class="optional">
+    <th>packets</th>
+    <td class="type">String</td>
+    <td>The packet(s) used for the match <em>if</em> different from that implied by the `packet` field of the `Round` containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.</td>
+  </tr>
+  <tr class="optional">
     <th>tiebreaker</th>
     <td class="type">Boolean</td>
     <td>Was the match a tiebreaker match?</td>
@@ -103,7 +108,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>correct_tossups_without_bonuses</th>
     <td class="type">Number</td>
-    <td>The number of tossups this team answered correctly (in any form) without earning a bonus. If absent, assumed to be <code>0</code>. Generally this occurs in overtime, but some formats may use tossups without bonuses in one phase of the game. This field can be used to correctly calculate points per bonus, whose denominator would be the total number of tossups heard by the time minus this field's value. For more complicated overtime scenarios (e.g. involving nonstandard <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code>s), you will need to create different <code>AnswerType</code>s with different values of <code>awards_bonus</code>.</td>
+    <td>The number of tossups this team answered correctly (in any form) without earning a bonus. If absent, assumed to be <code>0</code>. Generally this occurs in overtime, but some formats may use tossups without bonuses in one phase of the game. This field can be used to correctly calculate points per bonus, whose denominator in most formats would be the total number of tossups answered correctly by the team <em>minus</em> this field's value. For more complicated overtime scenarios (e.g. involving nonstandard <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code>s), you will need to create different <code>AnswerType</code>s with different values of <code>awards_bonus</code>.</td>
   </tr>
   <tr class="optional">
     <th>bonus_bounceback_points</th>
