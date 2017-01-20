@@ -213,14 +213,21 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>bonus_points</th>
     <td class="type">Number</td>
-    <td>How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus.</td>
+    <td>How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus, or if `bonus` is present.</td>
   </tr>
   <tr class="optional">
     <th>bounceback_bonus_points</th>
     <td class="type">Number</td>
-    <td>How many bonus points were awarded when this question's bonus bounced back. May be omitted if the question type doesn't award a bonus or if bonuses don't bounce back.</td>
+    <td>How many bonus points were awarded when this question's bonus bounced back. May be omitted if `bonus` is present, if the question type doesn't award a bonus, or if bonuses don't bounce back.</td>
+  </tr>
+  <tr class="optional">
+    <th>bonus</th>
+    <td class="type">`MatchQuestionBonus`</td>
+    <td>Information about the bonus that was read for this question. May be omitted if `bonus_points` is present, or if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.</td>
   </tr>
 </tbody></table>
+
+For any question that led to a bonus, `bonus_points` <em>or</em> `bonus` should be present, but not both.
 
 ## MatchQuestionBuzz object
 
@@ -239,5 +246,37 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <th>result</th>
     <td class="type"><a href="{{ site.baseurl }}/answer_type">AnswerType</a></td>
     <td>The result of the player's buzz, representing how many points the player's team received.</td>
+  </tr>
+</tbody></table>
+
+## MatchQuestionBonus object
+
+<table class="fields"><tbody>
+  <tr class="required">
+    <th>question_number</th>
+    <td class="type">Number</td>
+    <td>Which bonus number this was. May or may not match the `question_number` of the `MatchQuestion` parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).</td>
+  </tr>
+  <tr class="required">
+    <th>parts</th>
+    <td class="type">Array&nbsp;`MatchQuestionBonusPart`</td>
+    <td>Information about each part of the bonus.</td>
+  </tr>
+</tbody></table>
+
+For bonuses that do not have distinguishable parts &mdash; e.g. "Name any <i>m</i> of the <i>n</i> things that&hellip;" or 30&ndash;20&ndash;10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
+
+## MatchQuestionBonusPart object
+
+<table class="fields"><tbody>
+  <tr class="required">
+    <th>controlled_points</th>
+    <th class="type">Number</td>
+    <td>Number of points earned by the controlling team. In all formats with which we are familiar, this must be a nonnegative integer.</td>
+  </tr>
+  <tr class="optional">
+    <th>bounceback_points</th>
+    <th class="type">Number</td>
+    <td>Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points. In all formats with which we are familiar, this must be a nonnegative integer, and can only be positive if `controlled_points` is `0`.</td>
   </tr>
 </tbody></table>
