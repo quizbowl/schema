@@ -277,6 +277,6 @@ For bonuses that do not have distinguishable parts &mdash; e.g. "Name any <i>m</
   <tr class="optional">
     <th>bounceback_points</th>
     <th class="type">Number</td>
-    <td>Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points. In all formats with which we are familiar, this must be a nonnegative integer, and can only be positive if `controlled_points` is `0`.</td>
+    <td>Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points. In all formats with which we are familiar, this must be a nonnegative integer. Usually it can only be positive if `controlled_points` is `0`, but for bonuses of the form "Name any <i>m</i> of the <i>n</i>&hellip;") it would be possible for both `controlling_points` and `bounceback_points` to be positive.</td>
   </tr>
 </tbody></table>
