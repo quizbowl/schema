@@ -39,37 +39,37 @@ A `Tournament` object describes a tournament for which a single result is publis
   </tr>
   <tr class="optional">
     <th>registrations</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/registration">Registration</a></code></nobr></td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/registration">Registration</a></code></td>
     <td>The organizations registered to play in this tournament.</td>
   </tr>
   <tr class="optional">
     <th>phases</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/phase">Phase</a></code></nobr></td>
+    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/phase">Phase</a>`</td>
     <td>The phases of play in this tournament.</td>
   </tr>
   <tr class="optional">
     <th>rankings</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/ranking">Ranking</a></code></nobr></td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/ranking">Ranking</a></code></td>
     <td>The rankings used at this tournament.</td>
   </tr>
   <tr class="optional">
     <th>level</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Level of tournament: "middle_school", "high_school", "college", "open", "trash", or "other"</td>
   </tr>
   <tr class="optional">
     <th>difficulty</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Difficulty of tournament within respective level: "novice", "regular", "nationals"</td>
   </tr>
   <tr class="optional">
     <th>question_set</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Free-form string of question set(s) used at this tournament.</td>
   </tr>
   <tr class="optional">
     <th>info</th>
-    <td class="type"><nobr>String</nobr></td>
+    <td class="type">String</td>
     <td>Free-form string of other information relevant to tournament.</td>
   </tr>
 </tbody></table>
@@ -165,21 +165,21 @@ A `Tournament` object describes a tournament for which a single result is publis
   <tr class="optional">
     <th>maximum_lightning_score</th>
     <td class="type">Number</td>
-    <td>The maximum possible score on a single lightning round. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>100</code>.</td>
+    <td>The maximum possible score on a single lightning round. If omitted but <code>lightning_count_per_team</code> is present and positive, assume <code>100</code>.</td>
   </tr>
   <tr class="optional">
     <th>lightning_divisor</th>
     <td class="type">Number</td>
-    <td>The largest integer that is guaranteed to be a factor of a valid score on a single lightning round. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>10</code>. If present, must be a positive integer.</td>
+    <td>The largest integer that is guaranteed to be a factor of a valid score on a single lightning round. If omitted but <code>lightning_count_per_team</code> is present and positive, assume <code>10</code>. If present, must be a positive integer.</td>
   </tr>
   <tr class="optional">
     <th>lightnings_bounce_back</th>
     <td class="type">Boolean</td>
-    <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>lightnings_per_team_per_match</code> is present and positive, assume <code>true</code>.</td>
+    <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>lightning_count_per_team</code> is present and positive, assume <code>true</code>.</td>
   </tr>
   <tr class="required">
     <th>answer_types</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></nobr></td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/answer_type">AnswerType</a></code></td>
     <td>The different answer types possible in this tournament.</td>
   </tr>
 </tbody></table>

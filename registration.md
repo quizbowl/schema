@@ -21,7 +21,7 @@ It is expected that each `Registration` object represents a distinct school or o
   </tr>
   <tr class="required">
     <th>teams</th>
-    <td class="type"><nobr>Array <code><a href="{{ site.baseurl }}/team">Team</a></code></nobr></td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/team">Team</a></code></td>
     <td>The teams registered to play for this school or organization.</td>
   </tr>
 </tbody></table>
