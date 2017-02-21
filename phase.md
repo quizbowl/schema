@@ -19,7 +19,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
   <tr class="optional">
     <th>rounds</th>
-    <td class="type">Array&nbsp;`Round`</td>
+    <td class="type">Array&nbsp;<code>Round</code></td>
     <td>The rounds within this phase.</td>
   </tr>
   <tr class="optional">
@@ -29,7 +29,7 @@ A `Phase` object describes a part of the tournament with a unified match structu
   </tr>
   <tr class="optional">
     <th>pools</th>
-    <td class="type">Array&nbsp;`Pool`</td>
+    <td class="type">Array&nbsp;<code>Pool</code></td>
     <td>The pools (or similar structures) into which teams are placed for this phase.</td>
   </tr>
 </tbody></table>
@@ -50,11 +50,11 @@ A `Phase` object describes a part of the tournament with a unified match structu
   <tr class="optional">
     <th>packets</th>
     <td class="type">String</td>
-    <td>Free-form information on what packet(s) were used in this round. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).</td>
+    <td>Free-form information on what packet(s) were used in this round. If this is omitted and the <code>question_set</code> specified in the <code>Tournament</code> object has a packet that logically matches this round's <code>name</code> (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).</td>
   </tr>
   <tr class="optional">
     <th>matches</th>
-    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/match">Match</a>`</td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/match">Match</a></code></td>
     <td>The matches that took place in this round.</td>
   </tr>
 </tbody></table>
@@ -81,7 +81,7 @@ A `Pool` object represents a set of teams that, in some meaningful sense, play t
   </tr>
   <tr class="optional">
     <th>pool_teams</th>
-    <td class="type">Array&nbsp;`PoolTeam`</td>
+    <td class="type">Array&nbsp;<code>PoolTeam</code></td>
     <td>The assignments of teams to pools for this phase.</td>
   </tr>
 </tbody></table>

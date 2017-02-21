@@ -14,12 +14,12 @@ A `Team` has a team name, other entry-specific information about the team that m
   </tr>
   <tr class="optional">
     <th>players</th>
-    <td class="type">Array&nbsp;`<a href="{{ site.baseurl }}/player">Player</a>`</td>
+    <td class="type">Array&nbsp;<code><a href="{{ site.baseurl }}/player">Player</a></code></td>
     <td>The players registered to play on this team.</td>
   </tr>
   <tr class="optional">
     <th>ranks</th>
-    <td class="type">Array&nbsp;`<a href="#Rank">Rank</a>`</td>
+    <td class="type">Array&nbsp;<code><a href="#Rank">Rank</a></code></td>
     <td>The ranks achieved by this team.</td>
   </tr>
 </tbody></table>

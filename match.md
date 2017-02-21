@@ -27,7 +27,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   <tr class="optional">
     <th>packets</th>
     <td class="type">String</td>
-    <td>The packet(s) used for the match <em>if</em> different from that implied by the `packet` field of the `Round` containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.</td>
+    <td>The packet(s) used for the match <em>if</em> different from that implied by the <code>packet</code> field of the <code>Round</code> containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.</td>
   </tr>
   <tr class="optional">
     <th>tiebreaker</th>
@@ -51,17 +51,17 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>match_teams</th>
-    <td class="type">Array&nbsp;`MatchTeam`</td>
+    <td class="type">Array&nbsp;<code>MatchTeam</code></td>
     <td>The performances of the teams in this match; see below.</td>
   </tr>
   <tr class="optional">
     <th>carryover_phases</th>
-    <td class="type">Array&nbsp;`Phase`</td>
+    <td class="type">Array&nbsp;<code>Phase</code></td>
     <td>Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.</td>
   </tr>
   <tr class="optional">
     <th>match_questions</th>
-    <td class="type">Array&nbsp;`MatchQuestion`</td>
+    <td class="type">Array&nbsp;<code>MatchQuestion</code></td>
     <td>The question-by-question account of what happened; see below.</td>
   </tr>
   <tr class="optional">
@@ -127,12 +127,12 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="optional">
     <th>match_players</th>
-    <td class="type">Array&nbsp;`MatchPlayer`</td>
+    <td class="type">Array&nbsp;<code>MatchPlayer</code></td>
     <td>The performances of the players on this team; see below.</td>
   </tr>
   <tr class="optional">
     <th>lineups</th>
-    <td class="type">Array&nbsp;`Lineup`</td>
+    <td class="type">Array&nbsp;<code>Lineup</code></td>
     <td>Which players were playing when; see below.</td>
   </tr>
   <tr class="optional">
@@ -157,7 +157,7 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>answer_counts</th>
-    <td class="type">Array&nbsp;`PlayerAnswerCount`</td>
+    <td class="type">Array&nbsp;<code>PlayerAnswerCount</code></td>
     <td>The number of this player's answers for each answer value.</td>
   </tr>
 </tbody></table>
@@ -172,13 +172,13 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>players</th>
-    <td class="type">Array&nbsp;`Player`</td>
-    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the `maximum_players_per_team` field from the tournament's `ScoringRules` object.</td>
+    <td class="type">Array&nbsp;<code>Player</code></td>
+    <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>maximum_players_per_team</code> field from the tournament's <code>ScoringRules</code> object.</td>
   </tr>
   <tr class="required">
     <th>reason</th>
     <td class="type">String</td>
-    <td>One of `initial`, `own_timeout`, `other_timeout`, `halftime`, `segment_break`, or `before_overtime`, representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be `1`. The `segment_break` option represents a moment between portions of a match such as the end of the first quarter in a four-quarter format. `halftime` can be thought of as equivalent to `segment_break` for the common case of match formats whose regulation segments are simply two halves. `before_overtime` can be thought of as a special case of `segment_break`.</td>
+    <td>One of <code>initial</code>, <code>own_timeout</code>, <code>other_timeout</code>, <code>halftime</code>, <code>segment_break</code>, or <code>before_overtime</code>, representing what opportunity the team had to set or change its lineup. If <code>reason</code> is "initial", then <code>first_question</code> should be <code>1</code>. The <code>segment_break</code> option represents a moment between portions of a match such as the end of the first quarter in a four-quarter format. <code>halftime</code> can be thought of as equivalent to <code>segment_break</code> for the common case of match formats whose regulation segments are simply two halves. <code>before_overtime</code> can be thought of as a special case of <code>segment_break</code>.</td>
   </tr>
 </tbody></table>
 
@@ -207,27 +207,27 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
   </tr>
   <tr class="required">
     <th>buzzes</th>
-    <td class="type">Array&nbsp;`MatchQuestionBuzz`</td>
+    <td class="type">Array&nbsp;<code>MatchQuestionBuzz</code></td>
     <td>The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.</td>
   </tr>
   <tr class="optional">
     <th>bonus_points</th>
     <td class="type">Number</td>
-    <td>How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus, or if `bonus` is present.</td>
+    <td>How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus, or if <code>bonus</code> is present.</td>
   </tr>
   <tr class="optional">
     <th>bounceback_bonus_points</th>
     <td class="type">Number</td>
-    <td>How many bonus points were awarded when this question's bonus bounced back. May be omitted if `bonus` is present, if the question type doesn't award a bonus, or if bonuses don't bounce back.</td>
+    <td>How many bonus points were awarded when this question's bonus bounced back. May be omitted if <code>bonus</code> is present, if the question type doesn't award a bonus, or if bonuses don't bounce back.</td>
   </tr>
   <tr class="optional">
     <th>bonus</th>
-    <td class="type">`MatchQuestionBonus`</td>
-    <td>Information about the bonus that was read for this question. May be omitted if `bonus_points` is present, or if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.</td>
+    <td class="type"><code>MatchQuestionBonus</code></td>
+    <td>Information about the bonus that was read for this question. May be omitted if <code>bonus_points</code> is present, or if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.</td>
   </tr>
 </tbody></table>
 
-For any question that led to a bonus, `bonus_points` <em>or</em> `bonus` should be present, but not both.
+For any question that led to a bonus, <code>bonus_points</code> <em>or</em> <code>bonus</code> should be present, but not both.
 
 ## MatchQuestionBuzz object
 
@@ -255,28 +255,28 @@ For any question that led to a bonus, `bonus_points` <em>or</em> `bonus` should 
   <tr class="required">
     <th>question_number</th>
     <td class="type">Number</td>
-    <td>Which bonus number this was. May or may not match the `question_number` of the `MatchQuestion` parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).</td>
+    <td>Which bonus number this was. May or may not match the <code>question_number</code> of the <code>MatchQuestion</code> parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).</td>
   </tr>
   <tr class="required">
     <th>parts</th>
-    <td class="type">Array&nbsp;`MatchQuestionBonusPart`</td>
+    <td class="type">Array&nbsp;<code>MatchQuestionBonusPart</code></td>
     <td>Information about each part of the bonus.</td>
   </tr>
 </tbody></table>
 
-For bonuses that do not have distinguishable parts &mdash; e.g. "Name any <i>m</i> of the <i>n</i> things that&hellip;" or 30&ndash;20&ndash;10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
+For bonuses that do not have distinguishable parts &mdash; e.g. "Name any <i>m</i> of the <i>n</i> things that&hellip;" or 30&ndash;20&ndash;10-style bonuses, treat the entire bonus as a single <code>MatchQuestionBonusPart</code>.
 
 ## MatchQuestionBonusPart object
 
 <table class="fields"><tbody>
   <tr class="required">
     <th>controlled_points</th>
-    <th class="type">Number</td>
+    <td class="type">Number</td>
     <td>Number of points earned by the controlling team. In all formats with which we are familiar, this must be a nonnegative integer.</td>
   </tr>
   <tr class="optional">
     <th>bounceback_points</th>
-    <th class="type">Number</td>
-    <td>Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points. In all formats with which we are familiar, this must be a nonnegative integer. Usually it can only be positive if `controlled_points` is `0`, but for bonuses of the form "Name any <i>m</i> of the <i>n</i>&hellip;") it would be possible for both `controlling_points` and `bounceback_points` to be positive.</td>
+    <td class="type">Number</td>
+    <td>Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points. In all formats with which we are familiar, this must be a nonnegative integer. Usually it can only be positive if <code>controlled_points</code> is <code>0</code>, but for bonuses of the form "Name any <i>m</i> of the <i>n</i>&hellip;") it would be possible for both <code>controlling_points</code> and <code>bounceback_points</code> to be positive.</td>
   </tr>
 </tbody></table>
