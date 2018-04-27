@@ -175,6 +175,11 @@ If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `
     <td class="type">Array&nbsp;<code>Player</code></td>
     <td>Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the <code>maximum_players_per_team</code> field from the tournament's <code>ScoringRules</code> object.</td>
   </tr>
+  <tr class="optional">
+    <th>captain</th>
+    <td class="type">Player</td>
+    <td>Which player serves as the captain during the time this Lineup is in effect. This player must be in <code>players</code>.</td>
+  </tr>
   <tr class="required">
     <th>reason</th>
     <td class="type">String</td>

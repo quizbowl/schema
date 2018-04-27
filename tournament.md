@@ -153,6 +153,21 @@ A `Tournament` object describes a tournament for which a single result is publis
     <td>The largest integer that is guaranteed to be a factor of a valid score on a single bonus. If omitted but <code>maximum_bonus_score</code> is present, assume <code>10</code>. If present, must be a positive integer.</td>
   </tr>
   <tr class="optional">
+    <th>minimum_parts_per_bonus</th>
+    <td class="type">Number</td>
+    <td>The smallest number of parts that may exist in one bonus. If omitted but <code>maximum_bonus_score</code> is present, assume <code>3</code>. If present, this must be a positive integer. If <code>maximum_parts_per_bonus</code> is present, this must be less than or equal to <code>maximum_parts_per_bonus</code>.</td>
+  </tr>
+  <tr class="optional">
+    <th>maximum_parts_per_bonus</th>
+    <td class="type">Number</td>
+    <td>The greatest number of parts that may exist in one bonus. If omitted but <code>maximum_bonus_score</code> is present, assume <code>3</code>. If present, this must be a positive integer. If <code>minimum_parts_per_bonus</code> is present, this must be greater than or equal to <code>minimum_parts_per_bonus</code>.</td>
+  </tr>
+  <tr class="optional">
+    <th>points_per_bonus_part</th>
+    <td class="type">Number</td>
+    <td>The number of points earned for a correct answer to one bonus part. Omitting this while specifying <code>maximum_bonus_score</code> means that the number of points needn't be the same for all bonus parts. If present, this must be a positive integer. If <code>bonus_divisor</code> and this are both present, they must be consistent.</td>
+  </tr>
+  <tr class="optional">
     <th>bonuses_bounce_back</th>
     <td class="type">Boolean</td>
     <td><code>true</code> if the non-controlling team has an opportunity to answer parts of a bonus that the controlling team did not answer correctly; <code>false</code> if not. If omitted but <code>maximum_bonus_score</code> is present, assume <code>false</code>.</td>
