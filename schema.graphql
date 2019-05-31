@@ -1,0 +1,764 @@
+scalar Date
+
+type Query {
+  tournaments: [Tournament]
+}
+
+"""
+A `Tournament` object describes a tournament for which a single result is published. A `Tournament` consists of a number of `Match` objects, a number of `Registration` objects, and other optional information.
+
+Docs group: Tournament
+"""
+type Tournament {
+  id: ID!
+
+  """
+  The tournament's name.
+  """
+  name: String!
+
+  """
+  An abbreviated version of the tournament's `name`. If omitted, assume the same as the `name`.
+  """
+  short_name: String
+
+  """
+  Where this tournament happened.
+  """
+  tournament_site: TournamentSite
+
+  """
+  Validation rules for scoring matches in this tournament.
+  """
+  scoring_rules: ScoringRules
+
+  """
+  The tournament's start date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  """
+  start_date: Date
+
+  """
+  The tournament's end date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  """
+  end_date: Date
+
+  """
+  The organizations registered to play in this tournament.
+  """
+  registrations: [Registration]
+
+  """
+  The phases of play in this tournament.
+  """
+  phases: [Phase]
+
+  """
+  The rankings used at this tournament.
+  """
+  rankings: [Ranking]
+
+  """
+  The level of the tournament.
+  """
+  level: TournamentLevel
+
+  """
+  The difficulty of the tournament.
+  """
+  difficulty: TournamentDifficulty
+
+  """
+  Free-form string of question set(s) used at this tournament.
+  """
+  question_set: String
+
+  """
+  Free-form string of other information relevant to tournament.
+  """
+  info: String
+}
+
+enum TournamentLevel {
+  middle_school
+  high_school
+  college
+  open
+  trash
+  other
+}
+
+enum TournamentDifficulty {
+  novice
+  regular
+  nationals
+}
+
+"""
+A `Phase` object describes a part of the tournament with a unified match structure. A typical tournament might have one phase for the preliminary rounds and a second phase for the playoff rounds.
+
+Docs group: Phase
+"""
+type Phase {
+  id: ID!
+
+  """
+  The name of the phase, such as "Preliminary Rounds" or "Playoffs".
+  """
+  name: String!
+
+  """
+  A description of the phase. Might contain information like how teams are split into pools, the use of power-matching or elimination-based formats, etc.
+  """
+  description: String
+
+  """
+  The rounds within this phase.
+  """
+  rounds: [Round]
+
+  """
+  Whether teams may trade cards during this phase. For example, `true` would be used for a power-matching or elimination structure, while `false` could be used for a round-robin structure. If absent, assumed to be `false`.
+  """
+  cards_traded: Boolean
+
+  """
+  The pools (or similar structures) into which teams are placed for this phase.
+  """
+  pools: [Pool]
+}
+
+"""
+Docs group: Phase
+"""
+type Round {
+  id: ID!
+
+  """
+  The name of the round. Possibly numerical; possibly something like "Preliminary Tiebreaker".
+  """
+  name: String!
+
+  """
+  A description of the round. Probably unnecessary, but useful for "special" rounds like tiebreakers.
+  """
+  description: String
+
+  """
+  Free-form information on what packet(s) were used in this round. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
+  """
+  packets: String
+
+  """
+  The matches that took place in this round.
+  """
+  matches: [Match]
+}
+
+"""
+A `Pool` object represents a set of teams that, in some meaningful sense, play together for the phase. They might be round-robin pools, playoff tiers, etc. It is not required that teams _only_ play matches within their pool.
+
+Docs group: Phase
+"""
+type Pool {
+  id: ID!
+
+  """
+  The name of the pool.
+  """
+  name: String!
+
+  """
+  A description of the pool.
+  """
+  description: String
+
+  """
+  The position/rank of this Pool among all Pool objects used for its Phase. Need not be unique (e.g. in the case of parallel pools).
+  """
+  position: Int
+
+  """
+  The assignments of teams to pools for this phase.
+  """
+  pool_teams: [PoolTeam]
+}
+
+"""
+Docs group: Phase
+"""
+type PoolTeam {
+  """
+  The Pool to which the Team is assigned.
+  """
+  pool: Pool!
+
+  """
+  The Team being assigned to the Pool.
+  """
+  team: Team!
+
+  """
+  The final position/rank of this Team within this Pool.
+  """
+  position: Int
+}
+
+"""
+Docs group: Tournament
+"""
+type ScoringRules {
+  id: ID!
+
+  """
+  The name for this set of scoring rules.
+  """
+  name: String!
+
+  """
+  The number of teams that participates in each match. If omitted, assume `2`.
+  """
+  teams_per_match: Int
+
+  """
+  The maximum number of players that may be active at once, per team, in a match. If omitted, assume `4`.
+  """
+  maximum_players_per_team: Int
+
+  """
+  The standard number of tossups heard in a match. If omitted, assume `20`.
+  """
+  regulation_tossup_count: Int
+
+  """
+  The maximum number of tossups heard in a match that does not go into overtime. (Different from `regulation_tossup_count` for tournaments that used timed matches.) If omitted, assume `20`.
+  """
+  maximum_regulation_tossup_count: Int
+
+  """
+  The smallest possible number of overtime tossups or tossup-bonus cycles (as determined by `overtime_includes_bonuses`). If overtime is sudden death from the beginning, this will be `1`, and that is the value assumed if this field is omitted.
+  """
+  minimum_overtime_question_count: Int
+
+  """
+  Are bonuses used in overtime? If omitted, assume `false`.
+  """
+  overtime_includes_bonuses: Boolean
+
+  """
+  The largest integer that is guaranteed to be a factor of a valid final score for one team in one match. If omitted, assume `5`. If present, must be a positive integer.
+  """
+  total_divisor: Int
+
+  """
+  The maximum possible score on a single bonus. Omitting this means there are no bonuses. If present and `bonus_divisor` is present, must be divisible by `bonus_divisor`.
+  """
+  maximum_bonus_score: Int
+
+  """
+  The largest integer that is guaranteed to be a factor of a valid score on a single bonus. If omitted but `maximum_bonus_score` is present, assume `10`. If present, must be a positive integer.
+  """
+  bonus_divisor: Int
+
+  """
+  The smallest number of parts that may exist in one bonus. If omitted but `maximum_bonus_score` is present, assume `3`. If present, this must be a positive integer. If `maximum_parts_per_bonus` is present, this must be less than or equal to `maximum_parts_per_bonus`.
+  """
+  minimum_parts_per_bonus: Int
+
+  """
+  The greatest number of parts that may exist in one bonus. If omitted but `maximum_bonus_score` is present, assume `3`. If present, this must be a positive integer. If `minimum_parts_per_bonus` is present, this must be greater than or equal to `minimum_parts_per_bonus`.
+  """
+  maximum_parts_per_bonus: Int
+
+  """
+  The number of points earned for a correct answer to one bonus part. Omitting this while specifying `maximum_bonus_score` means that the number of points needn't be the same for all bonus parts. If present, this must be a positive integer. If `bonus_divisor` and this are both present, they must be consistent.
+  """
+  points_per_bonus_part: Int
+
+  """
+  `true` if the non-controlling team has an opportunity to answer parts of a bonus that the controlling team did not answer correctly; `false` if not. If omitted but `maximum_bonus_score` is present, assume `false`.
+  """
+  bonuses_bounce_back: Boolean
+
+  """
+  The number of lightning rounds received by each team in each game. If omitted, assume `0`.
+  """
+  lightning_count_per_team: Int
+
+  """
+  The maximum possible score on a single lightning round. If omitted but `lightning_count_per_team` is present and positive, assume `100`.
+  """
+  maximum_lightning_score: Int
+
+  """
+  The largest integer that is guaranteed to be a factor of a valid score on a single lightning round. If omitted but `lightning_count_per_team` is present and positive, assume `10`. If present, must be a positive integer.
+  """
+  lightning_divisor: Int
+
+  """
+  `true` if the non-controlling team has an opportunity to answer parts of a lightning round that the controlling team did not answer correctly; `false` if not. If omitted but `lightning_count_per_team` is present and positive, assume `true`.
+  """
+  lightnings_bounce_back: Boolean
+
+  """
+  The different answer types possible in this tournament.
+  """
+  answer_types: [AnswerType]!
+}
+
+"""
+An `AnswerType` object has details about how tossups can be answered. If you’re talking about the traditional -5/10/15 answer types or some subset thereof, you can skip this and use the `value` field instead.
+
+Docs group: Tournament
+"""
+type AnswerType {
+  id: ID!
+
+  """
+  The number of points a player receives for this answer type.
+  """
+  value: Int!
+
+  """
+  How to label this answer type on reports. If omitted, turn the `value` into a string.
+  """
+  label: String
+
+  """
+  How to label this answer type on reports when space is limited, perhaps in a table column header. If omitted, use the `label` field.
+  """
+  short_label: String
+
+  """
+  Whether or not the team that gets this answer value will next receive a bonus question. If omitted, assume `true` if `value` is greater than zero and false otherwise.
+  """
+  awards_bonus: Boolean
+}
+
+"""
+Docs group: Tournament
+"""
+type TournamentSite {
+  id: ID!
+
+  """
+  The tournament site's name (e.g. "Hyatt Regency O'Hare").
+  """
+  name: String!
+
+  """
+  The location of the tournament. Free-form; the purpose is to enable people to find the site. An example might be "9300 Bryn Mawr Avenue, Rosemont, Illinois".
+  """
+  place: String
+
+  """
+  The latitude of the tournament's site (for geolocation).
+  """
+  latitude: Float
+
+  """
+  The longitude of the tournament's site (for geolocation).
+  """
+  longitude: Float
+}
+
+"""
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played. Matches are contained in `Round` objects, which are contained in `Phase` objects of the `Tournament`.
+
+If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `MatchQuestion` objects, a complete scoresheet can be reconstructed.
+
+Docs group: Match
+"""
+type Match {
+  id: ID!
+
+  """
+  The number of tossups read, *including* any tossups read in overtime.
+  """
+  tossups_read: Int
+
+  """
+  The number of tossups read in overtime.
+  """
+  overtime_tossups_read: Int
+
+  """
+  The location of the match. Probably a room name.
+  """
+  location: String
+
+  """
+  The packet(s) used for the match *if* different from that implied by the `packet` field of the `Round` containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.
+  """
+  packets: String
+
+  """
+  Was the match a tiebreaker match?
+  """
+  tiebreaker: Boolean
+
+  """
+  Moderator's name.
+  """
+  moderator: String
+
+  """
+  Scorekeeper's name.
+  """
+  scorekeeper: String
+
+  """
+  "For control room use only"-type serial number.
+  """
+  serial: String
+
+  """
+  The performances of the teams in this match; see below.
+  """
+  match_teams: [MatchTeam]!
+
+  """
+  Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.
+  """
+  carryover_phases: [Phase]
+
+  """
+  The question-by-question account of what happened; see below.
+  """
+  match_questions: [MatchQuestion]
+
+  """
+  Freeform text field to record any notes about the match, such as protests or questions read out of order.
+  """
+  notes: String
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestion {
+  """
+  Which question number this was. Starts at 1.
+  """
+  question_number: Int!
+
+  """
+  The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.
+  """
+  buzzes: [MatchQuestionBuzz]!
+
+  """
+  How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus; must be omitted if `bonus` is present.
+  """
+  bonus_points: Int
+
+  """
+  How many bonus points were awarded when this question's bonus bounced back. May be omitted if `bonus` is present, if the question type doesn't award a bonus, or if bonuses don't bounce back.
+  """
+  bonus_bounceback_points: Int
+
+  """
+  Information about the bonus that was read for this question. Must be omitted if `bonus_points` is present; may be omitted if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.
+  """
+  bonus: MatchQuestionBonus
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBuzz {
+  """
+  Which team's player buzzed in.
+  """
+  team: Team!
+
+  """
+  Which player buzzed in.
+  """
+  player: Player!
+
+  """
+  The result of the player's buzz, representing how many points the player's team received.
+  """
+  result: AnswerType!
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBonus {
+  """
+  Which bonus number this was. May or may not match the `question_number` of the `MatchQuestion` parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).
+  """
+  question_number: Int!
+
+  """
+  Information about each part of the bonus.
+  """
+  parts: [MatchQuestionBonusPart]!
+}
+
+"""
+For bonuses that do not have distinguishable parts — e.g. “Name any *m* of the *n* things that…” or 30–20–10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
+
+Docs group: Match
+"""
+type MatchQuestionBonusPart {
+  """
+  Number of points earned by the controlling team. In all formats with which we are familiar, this must be a nonnegative integer.
+  """
+  controlled_points: Int!
+
+  """
+  Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points.
+
+  In all formats with which we are familiar, this must be a nonnegative integer. Usually it can only be positive if `controlled_points` is `0`, but for bonuses of the form "Name any *m* of the *n*…") it would be possible for both `controlling_points` and `bounceback_points` to be positive.
+  """
+  bounceback_points: Int
+}
+
+"""
+Docs group: Match
+"""
+type MatchTeam {
+  """
+  The team playing this side of the match.
+
+  At least one of `team` or `card` is required.
+  """
+  team: Team
+
+  """
+  The card this team was holding at the beginning of this match.
+
+  At least one of `team` or `card` is required.
+  """
+  card: String
+
+  """
+  Did this team forfeit this match? If absent, assumed to be `false`. Note that it is possible for both teams in a match to forfeit.
+  """
+  forfeit_loss: Boolean
+
+  """
+  The total score for this team in this match.
+
+  It is invalid to provide both `points` and `bonus_points` since that could allow for inconsistent data. Generally, `bonus_points` is preferred; `points` is for results that do not include detailed (player-level) statistics.
+  """
+  points: Int
+
+  """
+  The number of points this team earned on bonuses.
+
+  It is invalid to provide both `points` and `bonus_points` since that could allow for inconsistent data. Generally, `bonus_points` is preferred; `points` is for results that do not include detailed (player-level) statistics.
+  """
+  bonus_points: Int
+
+  """
+  The number of tossups this team answered correctly (in any form) without earning a bonus. If absent, assumed to be `0`. Generally this occurs in overtime, but some formats may use tossups without bonuses in one phase of the game. This field can be used to correctly calculate points per bonus, whose denominator in most formats would be the total number of tossups answered correctly by the team *minus* this field's value. For more complicated overtime scenarios (e.g. involving nonstandard `AnswerType`s), you will need to create different `AnswerType`s with different values of `awards_bonus`.
+  """
+  correct_tossups_without_bonuses: Int
+
+  """
+  The number of points this team earned on bonuses bounced back from the opponent.
+  """
+  bonus_bounceback_points: Int
+
+  """
+  The number of points this team earned on lightning questions.
+  """
+  lightning_points: Int
+
+  """
+  The number of points this team earned on lightning questions bounced back from the opponent.
+  """
+  lightning_bounceback_points: Int
+
+  """
+  The performances of the players on this team; see below.
+  """
+  match_players: [MatchPlayer]
+
+  """
+  Which players were playing when; see below.
+  """
+  lineups: [Lineup]
+
+  """
+  Indicates that the match should be excluded from calculations of standings, statistics, etc. If absent, this will be assumed to be `false`.
+  """
+  suppress_from_statistics: Boolean
+}
+
+"""
+Docs group: Match
+"""
+type MatchPlayer {
+  """
+  The player whose performance in this match is being stored.
+  """
+  player: Player!
+
+  """
+  The number of tossups this player heard.
+  """
+  tossups_heard: Int!
+
+  """
+  The number of this player's answers for each answer value.
+  """
+  answer_counts: [PlayerAnswerCount]!
+}
+
+"""
+Docs group: Match
+"""
+type PlayerAnswerCount {
+  """
+  Number of questions answered for this many points.
+  """
+  number: Int!
+
+  """
+  For nonstandard question types, the particular details about this answer type.
+  """
+  answer_type: AnswerType!
+}
+
+"""
+Docs group: Match
+"""
+type Lineup {
+  """
+  Which question number this lineup heard first. The players in this lineup will be credited with hearing all tossups until another lineup takes precendence or until the end of the game, whichever comes first.
+  """
+  first_question: Int!
+
+  """
+  Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the `maximum_players_per_team` field from the tournament's `ScoringRules` object.
+  """
+  players: [Player]!
+
+  """
+  Which player serves as the captain during the time this `Lineup` is in effect. This player must be listed in the `players` field.
+  """
+  captain: Player
+
+  """
+  What opportunity the team had to set or change its lineup.
+
+  If `reason` is "initial", then `first_question` should be `1`.
+
+  The "segment_break" option represents a moment between portions of a match such as the end of the first quarter in a four-quarter format. "halftime" can be thought of as equivalent to "segment_break" for the common case of match formats whose regulation segments are simply two halves. "before_overtime" can be thought of as a special case of "segment_break".
+  """
+  reason: LineupReason!
+}
+
+enum LineupReason {
+  initial
+  own_timeout
+  other_timeout
+  halftime
+  segment_break
+  before_overtime
+}
+
+"""
+A `Registration` object describes one school or other organization's entry into a tournament. It comprises the basic details about an organization and one or more `Team` objects.
+
+It is expected that each `Registration` object represents a distinct school or other organization. For instance, if "Anywhere High School" enters two teams, there should not be two `Registration` objects whose `name` fields are `Anywhere A` and `Anywhere B` and one `Team` child each; there should be one `Registration` object whose `name` field is `Anywhere` (or `Anywhere High School`) and two `Team` children.
+
+Docs group: Registration
+"""
+type Registration {
+  id: ID!
+
+  """
+  The school or other organization's name.
+  """
+  name: String!
+
+  """
+  The location of this team's origin. This may be any combination of city, state, country, etc., as appropriate for the tournament, and should be in human-readable format.
+  """
+  location: String
+
+  """
+  The teams registered to play for this school or organization.
+  """
+  teams: [Team]!
+}
+
+"""
+A `Team` has a team name, other entry-specific information about the team that may not apply to other teams from the same organization, a list of `Player` objects, and optionally, a list of `Rank` objects.
+
+Docs group: Team
+"""
+type Team {
+  id: ID!
+
+  """
+  The team's name.
+  """
+  name: String!
+
+  """
+  The players registered to play on this team.
+  """
+  players: [Player]
+
+  """
+  The ranks achieved by this team.
+  """
+  ranks: [Rank]
+}
+
+"""
+Docs group: Team
+"""
+type Rank {
+  """
+  A `Ranking` for which the team is eligible.
+  """
+  ranking: Ranking!
+
+  """
+  The position/rank the team has achieved among all teams eligible for the given Ranking. Omitting this field indicates that the rank has not been determined yet (e.g. because the tournament is still in progress) but the team is eligible for the Ranking. May not be unique (i.e., there may be a tie).
+  """
+  position: Int
+}
+
+"""
+A `Ranking` object describes an award that is given at a `Tournament`. A `Tournament` may have several `Ranking`s; for instance, it might have a "top small school" Ranking or a "top undergraduate team" Ranking.
+
+Docs group: Team
+"""
+type Ranking {
+  """
+  The name of the ranking.
+  """
+  name: String
+
+  """
+  A description of the ranking, such as information on eligibility.
+  """
+  description: String
+}
+
+"""
+A `Player` object has basic information about a player.
+
+Docs group: Player
+"""
+type Player {
+  id: ID!
+
+  """
+  The player's name.
+  """
+  name: String!
+
+  """
+  The player's year in school. Use `0` for kindergarten, `1` for first grade, &hellip;, `12` for twelfth grade (senior in high school), `13` for college frosh, &hellip;, `16` for college senior, `17` for college post-senior, and `18` for graduate student.
+  """
+  year: Int
+}
