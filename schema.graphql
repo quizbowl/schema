@@ -372,12 +372,12 @@ type Match {
   id: ID!
 
   """
-  The number of tossups read, *including* any tossups read in overtime.
+  The number of tossups read, *including* any tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
   """
   tossups_read: Int
 
   """
-  The number of tossups read in overtime.
+  The number of tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
   """
   overtime_tossups_read: Int
 
