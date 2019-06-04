@@ -77,7 +77,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on its website](
 
 ## 💫 Deploy
 
-The main repository is configured to automatically deploy the `master` branch to [schema.quizbowl.technology](https://schema.quizbowl.technology) on every change. You can deploy your own copy once you have `now` [configured for yourself](https://zeit.co/now/):
+The main repository is configured to automatically deploy the `master` branch to [schema.quizbowl.technology](https://schema.quizbowl.technology) on every change; any branch you create will also be deployed to a unique URL every time you push to it.
+
+There's probably no case in which you need to do this, but you can deploy your own local copy to another URL once you have `now` [configured for yourself](https://zeit.co/now/):
 
 ```sh
 $ now
