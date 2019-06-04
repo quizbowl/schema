@@ -8,7 +8,7 @@
 
     ```sh
     cd path-to-qb-schema/
-    yarn && yarn develop
+    yarn && yarn dev
     ```
 
 1.  **Open the source code and start editing!**
