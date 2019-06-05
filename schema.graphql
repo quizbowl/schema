@@ -451,9 +451,24 @@ Docs group: Match
 """
 type MatchQuestion {
   """
-  Which question number this was. Starts at 1.
+  Which tossup-bonus cycle number this was. Starts at 1.
   """
   question_number: Int!
+
+  """
+  Information about the tossup question in this cycle.
+  """
+  tossup_question: Question
+
+  """
+  Information about the tossup question used as a replacement in this cycle, if any. Omit if the tossup was not replaced. Multiple replacement tossups are not currently supported.
+  """
+  replacement_tossup_question: Question
+
+  """
+  The `MatchTeam`s who were eligible to answer the replacement tossup. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `tossup_question`.
+  """
+  replacement_tossup_question_match_teams: [MatchTeam]
 
   """
   The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.
@@ -474,6 +489,16 @@ type MatchQuestion {
   Information about the bonus that was read for this question. Must be omitted if `bonus_points` is present; may be omitted if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.
   """
   bonus: MatchQuestionBonus
+
+  """
+  Information about the bonus question used as a replacement in this cycle, if any. Omit if the bonus was not replaced. Multiple replacement bonuses are not currently supported.
+  """
+  replacement_bonus_question: Question
+
+  """
+  The `MatchTeam`s who were eligible to answer the replacement bonus. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `bonus.question`.
+  """
+  replacement_bonus_question_match_teams: [MatchTeam]
 }
 
 """
@@ -499,11 +524,51 @@ type MatchQuestionBuzz {
 """
 Docs group: Match
 """
-type MatchQuestionBonus {
+type Question {
   """
-  Which bonus number this was. May or may not match the `question_number` of the `MatchQuestion` parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).
+  The number of the question in the packet.
   """
   question_number: Int!
+  
+  """
+  The type of the question. We generally expect `tossup` or `bonus`, but are not restricting the values since some formats may use other types of questions.
+  """
+  type: String!
+  
+  """
+  The number of parts the question has (typically `1` if `type = "tossup"` and `3` if `type = "bonus"`, but some formats may vary).
+  """
+  parts: Int
+  
+  """
+  The identifier for the question in some external system, if any (e.g., the question IDs that NAQT prints below each question in its packet).
+  """
+  external_id: String
+  
+  """
+  Freeform information about the question's category, e.g. `British History`.
+  """
+  category: String
+  
+  """
+  Freeform information about the question's category at a higher level of aggregation, e.g. `History`.
+  """
+  category_group: String
+  
+  """
+  The text of the question.
+  """
+  text: String
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBonus {
+  """
+  Information about the question used as a bonus.
+  """
+  question: Question
 
   """
   Information about each part of the bonus.
