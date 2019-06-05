@@ -372,12 +372,12 @@ type Match {
   id: ID!
 
   """
-  The number of tossups read, *including* any tossups read in overtime.
+  The number of tossups read, *including* any tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
   """
   tossups_read: Int
 
   """
-  The number of tossups read in overtime.
+  The number of tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
   """
   overtime_tossups_read: Int
 
@@ -758,7 +758,7 @@ type Player {
   name: String!
 
   """
-  The player's year in school. Use `0` for kindergarten, `1` for first grade, &hellip;, `12` for twelfth grade (senior in high school), `13` for college frosh, &hellip;, `16` for college senior, `17` for college post-senior, and `18` for graduate student.
+  The player's year in school. Use `0` for kindergarten, `1` for first grade, &hellip;, `12` for twelfth grade (senior in high school), `13` for college frosh, &hellip;, `16` for college senior, `17` for college post-senior, and `18` for graduate student. Use `-1` when the notion of a grade is known to be inapplicable, e.g., for players who are not enrolled in school (this is distinct from omitting the field, which implies the player's year is unknown).
   """
   year: Int
 }
