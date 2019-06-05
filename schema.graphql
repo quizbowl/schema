@@ -58,14 +58,14 @@ type Tournament {
   rankings: [Ranking]
 
   """
-  The level of the tournament.
+  The intended audience of the tournament.
   """
-  level: TournamentLevel
+  audience: TournamentAudience
 
   """
-  The difficulty of the tournament.
+  The level of the tournament, within the context of its `audience`.
   """
-  difficulty: TournamentDifficulty
+  level: TournamentLevel
 
   """
   Free-form string of question set(s) used at this tournament.
@@ -73,24 +73,38 @@ type Tournament {
   question_set: String
 
   """
+  The subject matter of the tournament question set(s).
+  """
+  content: TournamentContent
+
+  """
   Free-form string of other information relevant to tournament.
   """
   info: String
 }
 
-enum TournamentLevel {
+enum TournamentAudience {
+  elementary_school
   middle_school
   high_school
+  community_college
   college
   open
-  trash
   other
 }
 
-enum TournamentDifficulty {
+enum TournamentLevel {
   novice
   regular
   nationals
+  other
+}
+
+enum TournamentContent {
+  general_academic
+  specialized_academic
+  trash
+  other
 }
 
 """
