@@ -33,12 +33,12 @@ type Tournament {
   scoring_rules: ScoringRules
 
   """
-  The tournament's start date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  The tournament's start date, including time zone, as an ISO 8601-formatted string in the tournament's local time zone.
   """
   start_date: Date
 
   """
-  The tournament's end date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  The tournament's end date, including time zone, as an ISO 8601-formatted string in the tournament's local time zone.
   """
   end_date: Date
 
