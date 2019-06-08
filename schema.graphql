@@ -461,9 +461,19 @@ type MatchQuestion {
   tossup_question: Question
 
   """
+  The time at which the moderator began reading the tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  tossup_start_time: Date
+
+  """
   Information about the tossup question used as a replacement in this cycle, if any. Omit if the tossup was not replaced. Multiple replacement tossups are not currently supported.
   """
   replacement_tossup_question: Question
+
+  """
+  The time at which the moderator began reading the replacement tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  replacement_tossup_start_time: Date
 
   """
   The `MatchTeam`s who were eligible to answer the replacement tossup. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `tossup_question`.
@@ -491,6 +501,11 @@ type MatchQuestion {
   bonus: MatchQuestionBonus
 
   """
+  The time at which the moderator began reading the bonus. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  bonus_start_time: Date
+
+  """
   Information about the bonus question used as a replacement in this cycle, if any. Omit if the bonus was not replaced. Multiple replacement bonuses are not currently supported.
   """
   replacement_bonus_question: Question
@@ -516,9 +531,34 @@ type MatchQuestionBuzz {
   player: Player!
 
   """
+  Details on the timing of the buzz.
+  """
+  buzz_position: BuzzPosition
+
+  """
   The result of the player's buzz, representing how many points the player's team received.
   """
   result: AnswerType!
+}
+
+"""
+Docs group: Match
+"""
+type BuzzPosition {
+  """
+  The time of the buzz. An ISO 8601-formatted string, with time zone, in the tournament's local time zone. May not be before the start time of reading the relevant question.
+  """
+  time: Date
+
+  """
+  The (`0`-based) index of the word on which the player buzzed.
+  """
+  word_index: Int
+
+  """
+  The (`0`-based) index of the clue on which the player buzzed. Clues may be defined in the `Question` object.
+  """
+  clue_index: Int
 }
 
 """
@@ -558,9 +598,14 @@ type Question {
   category_group: String
   
   """
-  The text of the question.
+  The text of the question (as a single field).
   """
   text: String
+  
+  """
+  The text of the question, broken up into clues so that `BuzzPosition`s can reference which clue was being buzzed on. Defining "clue" is outside the scope of this schema.
+  """
+  clues: [String]
 }
 
 """
