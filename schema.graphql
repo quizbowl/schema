@@ -663,9 +663,29 @@ type MatchTeam {
   lineups: [Lineup]
 
   """
+  An object containing information that documents a team's acceptance of the result of the match. The absence of this object could mean the team has not yet accepted the result, the team has refused to accept the result, or simply that the tournament does not care to track acceptance of results. The exact meaning of "acceptance" is up to the tournament—it could mean acceptance of the overall outcome, acceptance of the final score, acceptance of every detail, or something else.
+  """
+  signature: Signature
+
+  """
   Indicates that the match should be excluded from calculations of standings, statistics, etc. If absent, this will be assumed to be `false`.
   """
   suppress_from_statistics: Boolean
+}
+
+"""
+Docs group: Match
+"""
+type Signature {
+  """
+  The URL of an image of the signature of a member of the team (typically a coach or captain), indicating their acceptance of the result.
+  """
+  image_url: String
+
+  """
+  Any comments the signer made related to acceptance of the result.
+  """
+  note: String
 }
 
 """
