@@ -522,6 +522,8 @@ type MatchQuestionBuzz {
 }
 
 """
+This object can be reused for every time the same question is read, i.e., it represents a question in general rather than a question being read in a specific match.
+
 Docs group: Match
 """
 type Question {
