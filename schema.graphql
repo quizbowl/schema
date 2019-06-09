@@ -508,12 +508,7 @@ type MatchQuestion {
   """
   Information about the bonus question used as a replacement in this cycle, if any. Omit if the bonus was not replaced. Multiple replacement bonuses are not currently supported.
   """
-  replacement_bonus_question: Question
-
-  """
-  The `MatchTeam`s who were eligible to answer the replacement bonus. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `bonus.question`.
-  """
-  replacement_bonus_question_match_teams: [MatchTeam]
+  replacement_bonus: MatchQuestionBonus
 }
 
 """
@@ -621,6 +616,11 @@ type MatchQuestionBonus {
   Information about each part of the bonus.
   """
   parts: [MatchQuestionBonusPart]!
+
+  """
+  The `MatchTeam`s who were eligible to answer this bonus. This is primarily useful for replacement questions. If omitted, it is assumed to be only the team who answered the tossup correctly (in scoring rules that do not use bouncebacks) or all teams (in scoring rules that use bouncebacks).
+  """
+  eligible_match_teams: [MatchTeam]
 }
 
 """
