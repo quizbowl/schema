@@ -546,12 +546,12 @@ type BuzzPosition {
   time: Date
 
   """
-  The (`0`-based) index of the word on which the player buzzed.
+  The (`0`-based) index of the word on which the player buzzed. Hearing any part of a word should be considered the same as hearing the entire word. So if a question begins "Abraham Lincoln…" and the player buzzes on "Abra—", this value would be `0`.
   """
   word_index: Int
 
   """
-  The (`0`-based) index of the clue on which the player buzzed. Clues may be defined in the `Question` object.
+  The (`0`-based) index of the clue on which the player buzzed. Clues may be defined in the `Question` object. Hearing any part of a clue should be considered the same as hearing the entire clue.
   """
   clue_index: Int
 }
