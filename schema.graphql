@@ -573,7 +573,7 @@ type Question {
   type: QuestionType!
   
   """
-  The number of parts the question has (typically `1` if `type = "tossup"` and `3` if `type = "bonus"`, but some formats may vary).
+  The number of parts the question has (typically `1` if `type` is `tossup` and `3` if `type` is `bonus`, but some formats may vary).
   """
   parts: Int
   
