@@ -568,9 +568,9 @@ type Question {
   question_number: Int!
   
   """
-  The type of the question. We generally expect `tossup` or `bonus`, but are not restricting the values since some formats may use other types of questions.
+  The type of the question.
   """
-  type: String!
+  type: QuestionType!
   
   """
   The number of parts the question has (typically `1` if `type = "tossup"` and `3` if `type = "bonus"`, but some formats may vary).
@@ -601,6 +601,12 @@ type Question {
   The text of the question, broken up into clues so that `BuzzPosition`s can reference which clue was being buzzed on. Defining "clue" is outside the scope of this schema.
   """
   clues: [String]
+}
+
+enum QuestionType {
+  tossup
+  bonus
+  lightning
 }
 
 """
