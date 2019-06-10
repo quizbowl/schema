@@ -27,6 +27,9 @@ const Header = ({ siteTitle }) => (
           <Link className="page-link" to="/match">
             Match
           </Link>
+          <Link className="page-link" to="/question">
+            Question
+          </Link>
           <Link className="page-link" to="/team">
             Team
           </Link>

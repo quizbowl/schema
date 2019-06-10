@@ -436,7 +436,7 @@ type Match {
   carryover_phases: [Phase]
 
   """
-  The question-by-question account of what happened; see below.
+  The question-by-question account of what happened.
   """
   match_questions: [MatchQuestion]
 
@@ -447,7 +447,7 @@ type Match {
 }
 
 """
-Docs group: Match
+Docs group: Question
 """
 type MatchQuestion {
   """
@@ -512,7 +512,7 @@ type MatchQuestion {
 }
 
 """
-Docs group: Match
+Docs group: Question
 """
 type MatchQuestionBuzz {
   """
@@ -537,7 +537,7 @@ type MatchQuestionBuzz {
 }
 
 """
-Docs group: Match
+Docs group: Question
 """
 type BuzzPosition {
   """
@@ -559,7 +559,7 @@ type BuzzPosition {
 """
 This object can be reused for every time the same question is read, i.e., it represents a question in general rather than a question being read in a specific match.
 
-Docs group: Match
+Docs group: Question
 """
 type Question {
   """
@@ -610,7 +610,7 @@ enum QuestionType {
 }
 
 """
-Docs group: Match
+Docs group: Question
 """
 type MatchQuestionBonus {
   """
@@ -632,7 +632,7 @@ type MatchQuestionBonus {
 """
 For bonuses that do not have distinguishable parts — e.g. “Name any *m* of the *n* things that…” or 30–20–10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
 
-Docs group: Match
+Docs group: Question
 """
 type MatchQuestionBonusPart {
   """
