@@ -3,7 +3,7 @@ function toInitialLowerCase(string) {
   return string[0].toLowerCase() + string.slice(1);
 }
 
-module.exports = async function listTypes(graphql) {
+module.exports = async function listTypes(graphql, prefix = "Schema_") {
   const result = await graphql(`
     {
       __schema {
@@ -54,16 +54,23 @@ module.exports = async function listTypes(graphql) {
     }
   } = result;
   const types = allTypes.filter(
-    type => type.name.startsWith("Schema_") && type.kind !== "ENUM"
+    type =>
+      !type.name.startsWith("_") &&
+      type.name.startsWith(prefix) &&
+      type.kind !== "ENUM"
   );
   const pageForType = {};
   const groups = [];
+  const pattern = new RegExp(`^${prefix}`, "u");
   for (const type of types) {
-    const title = type.name.replace(/^Schema_/u, "");
+    const title = type.name.replace(pattern, "");
     if (type.description != null) {
       const match = type.description.match(/Docs group: (\w+)/u);
       if (match) {
         const groupName = match[1];
+        if (groupName === "Skip") {
+          continue;
+        }
         const outputName = "/" + toInitialLowerCase(groupName);
         type.groupName = groupName;
         const currentGroup = groups.find(group => group.name === groupName);

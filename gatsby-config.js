@@ -1,16 +1,4 @@
 /* eslint-env node */
-const fs = require("fs");
-const { buildSchema } = require("graphql");
-const { SchemaLink } = require("apollo-link-schema");
-const {
-  makeExecutableSchema,
-  addMockFunctionsToSchema
-} = require("graphql-tools");
-
-const sdl = fs.readFileSync(`${__dirname}/schema.graphql`).toString();
-const schema = makeExecutableSchema({ typeDefs: sdl });
-addMockFunctionsToSchema({ schema });
-
 module.exports = {
   siteMetadata: {
     title: `Tournament Schema`,
@@ -25,15 +13,6 @@ module.exports = {
           default: require.resolve("./src/components/mdxTemplate.js")
         },
         extensions: [`.mdx`, `.md`]
-      }
-    },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "Schema",
-        fieldName: "schema",
-        createLink: () => new SchemaLink({ schema }),
-        createSchema: () => buildSchema(sdl)
       }
     },
     {

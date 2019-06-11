@@ -1,5 +1,8 @@
 scalar Date
 
+"""
+Docs group: Skip
+"""
 type Query {
   tournaments: [Tournament]
 }
@@ -454,12 +457,12 @@ type Packet {
   A human-readable identifier. Often primarily numeric (e.g., `Packet 1`), but could also be identified by authors (`Chicago` or `Yale + Maryland`), as for packet-submission tournaments.
   """
   name: String!
-  
+
   """
   The packet number, if that notion is meaningful. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
   """
   number: Int
-  
+
   """
   The authors of the packet. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
   """
@@ -612,37 +615,37 @@ type Question {
   The number of the question in the packet.
   """
   question_number: Int!
-  
+
   """
   The type of the question.
   """
   type: QuestionType!
-  
+
   """
   The number of parts the question has (typically `1` if `type` is `tossup` and `3` if `type` is `bonus`, but some formats may vary).
   """
   parts: Int
-  
+
   """
   The identifier for the question in some external system, if any (e.g., the question IDs that NAQT prints below each question in its packet).
   """
   external_id: String
-  
+
   """
   Freeform information about the question's category, e.g. `British History`.
   """
   category: String
-  
+
   """
   Freeform information about the question's category at a higher level of aggregation, e.g. `History`.
   """
   category_group: String
-  
+
   """
   The text of the question (as a single field).
   """
   text: String
-  
+
   """
   The text of the question, broken up into clues so that `BuzzPosition`s can reference which clue was being buzzed on. Defining "clue" is outside the scope of this schema.
   """
