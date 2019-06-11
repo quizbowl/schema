@@ -1,8 +1,10 @@
 /* eslint-env node */
+const { version } = require("./package.json");
 module.exports = {
   siteMetadata: {
     title: `Tournament Schema`,
-    description: `API and schema documentation for describing tournaments.`
+    description: `API and schema documentation for describing tournaments.`,
+    version
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

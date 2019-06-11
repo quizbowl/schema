@@ -2,6 +2,8 @@
 title: Serialization
 ---
 
+import VersionNumber from '../components/versionNumber'
+
 This page describes a JSON-based serialization format to write a whole tournament to a file.
 
 ## Basic format
@@ -10,7 +12,7 @@ All of the data types in the schema for an object are either native JSON data ty
 
 Indeed, native JSON data types serialize as you would expect in JSON; object types defined here serialize as JSON objects with a few extra fields.
 
-The top level of the JSON file **must** be an object with keys for `version` (the current version is `2.0`), and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
+The top level of the JSON file **must** be an object with keys for `version` (the current version is <code><VersionNumber /></code>), and `objects`, an array of objects; among these objects, there should be exactly one object of type `Tournament` and any number of other objects.
 
 The file's extension should be `.qbj` and its MIME type should be `application/vnd.quizbowl.qbj+json`.
 
