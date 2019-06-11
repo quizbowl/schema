@@ -945,7 +945,7 @@ type Ranking {
 """
 A `Player` object has basic information about a player.
 
-Docs group: Player
+Docs group: Team
 """
 type Player {
   id: ID!
