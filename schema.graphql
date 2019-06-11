@@ -493,7 +493,7 @@ enum PacketRole {
 }
 
 """
-Docs group: Question
+Docs group: Match
 """
 type MatchQuestion {
   """
@@ -558,7 +558,7 @@ type MatchQuestion {
 }
 
 """
-Docs group: Question
+Docs group: Match
 """
 type MatchQuestionBuzz {
   """
@@ -583,7 +583,7 @@ type MatchQuestionBuzz {
 }
 
 """
-Docs group: Question
+Docs group: Match
 """
 type BuzzPosition {
   """
@@ -656,7 +656,7 @@ enum QuestionType {
 }
 
 """
-Docs group: Question
+Docs group: Match
 """
 type MatchQuestionBonus {
   """
@@ -678,7 +678,7 @@ type MatchQuestionBonus {
 """
 For bonuses that do not have distinguishable parts — e.g. “Name any *m* of the *n* things that…” or 30–20–10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
 
-Docs group: Question
+Docs group: Match
 """
 type MatchQuestionBonusPart {
   """
