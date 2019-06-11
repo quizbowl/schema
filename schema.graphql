@@ -158,9 +158,9 @@ type Round {
   description: String
 
   """
-  Free-form information on what packet(s) were used in this round. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
+  Information on what packet(s) were used in this round. If multiple packets were used for regular play, the order of this array should be the order in which they were used. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
   """
-  packets: String
+  packets: [Packet]
 
   """
   The matches that took place in this round.
@@ -444,6 +444,52 @@ type Match {
   Freeform text field to record any notes about the match, such as protests or questions read out of order.
   """
   notes: String
+}
+
+"""
+Docs group: Question
+"""
+type Packet {
+  """
+  A human-readable identifier. Often primarily numeric (e.g., `Packet 1`), but could also be identified by authors (`Chicago` or `Yale + Maryland`), as for packet-submission tournaments.
+  """
+  identifier: String!
+  
+  """
+  The packet number, if that notion is meaningful. May also be contained in the `identifier`, but need not be, e.g. if both `number` and `authors` are specified, the `identifier` will typically only contain one of them (whichever is more important).
+  """
+  number: Int
+  
+  """
+  The authors of the packet. May also be contained in the `identifier`, but need not be, e.g. if both `number` and `authors` are specified, the `identifier` will typically only contain one of them (whichever is more important).
+  """
+  authors: [String]
+
+  """
+  How the packet is expected to be used. An `extra` packet typically consists only of tossups, and is for use in overtime and/or as replacements, as necessary. Note that a packet might be used differently in case of unusual situations.
+  """
+  role: PacketRole
+
+  """
+  Any further details on the packet.
+  """
+  note: String
+
+  """
+  The contents of the packet, in order.
+  """
+  questions: [Question]
+}
+
+enum PacketRole {
+  regular
+  finals
+  extra
+  overtime
+  replacement
+  backup
+  tiebreaker
+  scrimmage
 }
 
 """
