@@ -453,15 +453,15 @@ type Packet {
   """
   A human-readable identifier. Often primarily numeric (e.g., `Packet 1`), but could also be identified by authors (`Chicago` or `Yale + Maryland`), as for packet-submission tournaments.
   """
-  identifier: String!
+  name: String!
   
   """
-  The packet number, if that notion is meaningful. May also be contained in the `identifier`, but need not be, e.g. if both `number` and `authors` are specified, the `identifier` will typically only contain one of them (whichever is more important).
+  The packet number, if that notion is meaningful. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
   """
   number: Int
   
   """
-  The authors of the packet. May also be contained in the `identifier`, but need not be, e.g. if both `number` and `authors` are specified, the `identifier` will typically only contain one of them (whichever is more important).
+  The authors of the packet. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
   """
   authors: [String]
 
