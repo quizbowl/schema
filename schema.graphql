@@ -473,7 +473,7 @@ type Packet {
   """
   Any further details on the packet.
   """
-  note: String
+  notes: String
 
   """
   The contents of the packet, in order.
@@ -784,7 +784,7 @@ type Signature {
   """
   Any comments the signer made related to acceptance of the result.
   """
-  note: String
+  notes: String
 }
 
 """
