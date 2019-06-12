@@ -1,0 +1,385 @@
+"""
+A `Match` object describes a single match scheduled between two teams. A `Match` object with `MatchTeam` objects but without `MatchPlayer` objects can be used to describe a match that has been scheduled but not played. Matches are contained in `Round` objects, which are contained in `Phase` objects of the `Tournament`.
+
+If a `Match` includes `Lineup` objects on its `MatchTeam` objects and includes `MatchQuestion` objects, a complete scoresheet can be reconstructed.
+
+Docs group: Match
+"""
+type Match {
+  id: ID!
+
+  """
+  The number of tossups read, *including* any tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
+  """
+  tossups_read: Int
+
+  """
+  The number of tossups read in overtime. This should be absent or null (not `0`) in forfeit matches.
+  """
+  overtime_tossups_read: Int
+
+  """
+  The location of the match. Probably a room name.
+  """
+  location: String
+
+  """
+  The packet(s) used for the match *if* different from that implied by the `packet` field of the `Round` containing the match. This would be used if a small number of matches used different packet(s) than most matches in that round, e.g. by mistake, to fix a previous mistake, or to accommodate a team that had written the packet used for most games in the round.
+  """
+  packets: String
+
+  """
+  Was the match a tiebreaker match?
+  """
+  tiebreaker: Boolean
+
+  """
+  Moderator's name.
+  """
+  moderator: String
+
+  """
+  Scorekeeper's name.
+  """
+  scorekeeper: String
+
+  """
+  "For control room use only"-type serial number.
+  """
+  serial: String
+
+  """
+  The performances of the teams in this match; see below.
+  """
+  match_teams: [MatchTeam]!
+
+  """
+  Additional phases in which this match should count, besides the one that actually contains it. This is used for "carrying over" games.
+  """
+  carryover_phases: [Phase]
+
+  """
+  The question-by-question account of what happened.
+  """
+  match_questions: [MatchQuestion]
+
+  """
+  Freeform text field to record any notes about the match, such as protests or questions read out of order.
+  """
+  notes: String
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestion {
+  """
+  Which tossup-bonus cycle number this was. Starts at 1.
+  """
+  question_number: Int!
+
+  """
+  Information about the tossup question in this cycle.
+  """
+  tossup_question: Question
+
+  """
+  The time at which the moderator began reading the tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  tossup_start_time: Date
+
+  """
+  Information about the tossup question used as a replacement in this cycle, if any. Omit if the tossup was not replaced. Multiple replacement tossups are not currently supported.
+  """
+  replacement_tossup_question: Question
+
+  """
+  The time at which the moderator began reading the replacement tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  replacement_tossup_start_time: Date
+
+  """
+  The `MatchTeam`s who were eligible to answer the replacement tossup. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `tossup_question`.
+  """
+  replacement_tossup_question_match_teams: [MatchTeam]
+
+  """
+  The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.
+  """
+  buzzes: [MatchQuestionBuzz]!
+
+  """
+  How many bonus points were awarded on this question. May be omitted if the question type doesn't award a bonus; must be omitted if `bonus` is present.
+  """
+  bonus_points: Int
+
+  """
+  How many bonus points were awarded when this question's bonus bounced back. May be omitted if `bonus` is present, if the question type doesn't award a bonus, or if bonuses don't bounce back.
+  """
+  bonus_bounceback_points: Int
+
+  """
+  Information about the bonus that was read for this question. Must be omitted if `bonus_points` is present; may be omitted if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.
+  """
+  bonus: MatchQuestionBonus
+
+  """
+  The time at which the moderator began reading the bonus. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  bonus_start_time: Date
+
+  """
+  Information about the bonus question used as a replacement in this cycle, if any. Omit if the bonus was not replaced. Multiple replacement bonuses are not currently supported.
+  """
+  replacement_bonus: MatchQuestionBonus
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBuzz {
+  """
+  Which team's player buzzed in.
+  """
+  team: Team!
+
+  """
+  Which player buzzed in.
+  """
+  player: Player!
+
+  """
+  Details on the timing of the buzz.
+  """
+  buzz_position: BuzzPosition
+
+  """
+  The result of the player's buzz, representing how many points the player's team received.
+  """
+  result: AnswerType!
+}
+
+"""
+Docs group: Match
+"""
+type BuzzPosition {
+  """
+  The time of the buzz. An ISO 8601-formatted string, with time zone, in the tournament's local time zone. May not be before the start time of reading the relevant question.
+  """
+  time: Date
+
+  """
+  The (`0`-based) index of the word on which the player buzzed. Hearing any part of a word should be considered the same as hearing the entire word. So if a question begins "Abraham Lincoln…" and the player buzzes on "Abra—", this value would be `0`.
+  """
+  word_index: Int
+
+  """
+  The (`0`-based) index of the clue on which the player buzzed. Clues may be defined in the `Question` object. Hearing any part of a clue should be considered the same as hearing the entire clue.
+  """
+  clue_index: Int
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBonus {
+  """
+  Information about the question used as a bonus.
+  """
+  question: Question
+
+  """
+  Information about each part of the bonus.
+  """
+  parts: [MatchQuestionBonusPart]!
+
+  """
+  The `MatchTeam`s who were eligible to answer this bonus. This is primarily useful for replacement questions. If omitted, it is assumed to be only the team who answered the tossup correctly (in scoring rules that do not use bouncebacks) or all teams (in scoring rules that use bouncebacks).
+  """
+  eligible_match_teams: [MatchTeam]
+}
+
+"""
+For bonuses that do not have distinguishable parts — e.g. “Name any *m* of the *n* things that…” or 30–20–10-style bonuses, treat the entire bonus as a single `MatchQuestionBonusPart`.
+
+Docs group: Match
+"""
+type MatchQuestionBonusPart {
+  """
+  Number of points earned by the controlling team. In all formats with which we are familiar, this must be a nonnegative integer.
+  """
+  controlled_points: Int!
+
+  """
+  Number of points earned by the non-controlling team. May be omitted if bonuses do not bounce back, but should not be omitted merely because the non-controlling team earned no points.
+
+  In all formats with which we are familiar, this must be a nonnegative integer. Usually it can only be positive if `controlled_points` is `0`, but for bonuses of the form "Name any *m* of the *n*…") it would be possible for both `controlling_points` and `bounceback_points` to be positive.
+  """
+  bounceback_points: Int
+}
+
+"""
+Docs group: Match
+"""
+type MatchTeam {
+  """
+  The team playing this side of the match.
+
+  At least one of `team` or `card` is required.
+  """
+  team: Team
+
+  """
+  The card this team was holding at the beginning of this match.
+
+  At least one of `team` or `card` is required.
+  """
+  card: String
+
+  """
+  Did this team forfeit this match? If absent, assumed to be `false`. Note that it is possible for both teams in a match to forfeit.
+  """
+  forfeit_loss: Boolean
+
+  """
+  The total score for this team in this match.
+
+  It is invalid to provide both `points` and `bonus_points` since that could allow for inconsistent data. Generally, `bonus_points` is preferred; `points` is for results that do not include detailed (player-level) statistics.
+  """
+  points: Int
+
+  """
+  The number of points this team earned on bonuses.
+
+  It is invalid to provide both `points` and `bonus_points` since that could allow for inconsistent data. Generally, `bonus_points` is preferred; `points` is for results that do not include detailed (player-level) statistics.
+  """
+  bonus_points: Int
+
+  """
+  The number of tossups this team answered correctly (in any form) without earning a bonus. If absent, assumed to be `0`. Generally this occurs in overtime, but some formats may use tossups without bonuses in one phase of the game. This field can be used to correctly calculate points per bonus, whose denominator in most formats would be the total number of tossups answered correctly by the team *minus* this field's value. For more complicated overtime scenarios (e.g. involving nonstandard `AnswerType`s), you will need to create different `AnswerType`s with different values of `awards_bonus`.
+  """
+  correct_tossups_without_bonuses: Int
+
+  """
+  The number of points this team earned on bonuses bounced back from the opponent.
+  """
+  bonus_bounceback_points: Int
+
+  """
+  The number of points this team earned on lightning questions.
+  """
+  lightning_points: Int
+
+  """
+  The number of points this team earned on lightning questions bounced back from the opponent.
+  """
+  lightning_bounceback_points: Int
+
+  """
+  The performances of the players on this team; see below.
+  """
+  match_players: [MatchPlayer]
+
+  """
+  Which players were playing when; see below.
+  """
+  lineups: [Lineup]
+
+  """
+  An object containing information that documents a team's acceptance of the result of the match. The absence of this object could mean the team has not yet accepted the result, the team has refused to accept the result, or simply that the tournament does not care to track acceptance of results. The exact meaning of "acceptance" is up to the tournament—it could mean acceptance of the overall outcome, acceptance of the final score, acceptance of every detail, or something else.
+  """
+  signature: Signature
+
+  """
+  Indicates that the match should be excluded from calculations of standings, statistics, etc. If absent, this will be assumed to be `false`.
+  """
+  suppress_from_statistics: Boolean
+}
+
+"""
+Docs group: Match
+"""
+type Signature {
+  """
+  The URL of an image of the signature of a member of the team (typically a coach or captain), indicating their acceptance of the result.
+  """
+  image_url: String
+
+  """
+  Any comments the signer made related to acceptance of the result.
+  """
+  notes: String
+}
+
+"""
+Docs group: Match
+"""
+type MatchPlayer {
+  """
+  The player whose performance in this match is being stored.
+  """
+  player: Player!
+
+  """
+  The number of tossups this player heard.
+  """
+  tossups_heard: Int!
+
+  """
+  The number of this player's answers for each answer value.
+  """
+  answer_counts: [PlayerAnswerCount]!
+}
+
+"""
+Docs group: Match
+"""
+type PlayerAnswerCount {
+  """
+  Number of questions answered for this many points.
+  """
+  number: Int!
+
+  """
+  For nonstandard question types, the particular details about this answer type.
+  """
+  answer_type: AnswerType!
+}
+
+"""
+Docs group: Match
+"""
+type Lineup {
+  """
+  Which question number this lineup heard first. The players in this lineup will be credited with hearing all tossups until another lineup takes precendence or until the end of the game, whichever comes first.
+  """
+  first_question: Int!
+
+  """
+  Which players were in this lineup, in the same order that they would appear on the scoresheet. This array's length is less than or equal to the `maximum_players_per_team` field from the tournament's `ScoringRules` object.
+  """
+  players: [Player]!
+
+  """
+  Which player serves as the captain during the time this `Lineup` is in effect. This player must be listed in the `players` field.
+  """
+  captain: Player
+
+  """
+  What opportunity the team had to set or change its lineup.
+
+  If `reason` is "initial", then `first_question` should be `1`.
+
+  The "segment_break" option represents a moment between portions of a match such as the end of the first quarter in a four-quarter format. "halftime" can be thought of as equivalent to "segment_break" for the common case of match formats whose regulation segments are simply two halves. "before_overtime" can be thought of as a special case of "segment_break".
+  """
+  reason: LineupReason!
+}
+
+enum LineupReason {
+  initial
+  own_timeout
+  other_timeout
+  halftime
+  segment_break
+  before_overtime
+}

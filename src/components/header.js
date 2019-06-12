@@ -30,9 +30,6 @@ const Header = ({ siteTitle }) => (
           <Link className="page-link" to="/question">
             Question
           </Link>
-          <Link className="page-link" to="/team">
-            Team
-          </Link>
           <Link className="page-link" to="/serialization">
             Serialization
           </Link>

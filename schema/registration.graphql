@@ -1,0 +1,100 @@
+"""
+A `Registration` object describes one school or other organization's entry into a tournament. It comprises the basic details about an organization and one or more `Team` objects.
+
+It is expected that each `Registration` object represents a distinct school or other organization. For instance, if "Anywhere High School" enters two teams, there should not be two `Registration` objects whose `name` fields are `Anywhere A` and `Anywhere B` and one `Team` child each; there should be one `Registration` object whose `name` field is `Anywhere` (or `Anywhere High School`) and two `Team` children.
+
+Docs group: Registration
+"""
+type Registration {
+  id: ID!
+
+  """
+  The school or other organization's name.
+  """
+  name: String!
+
+  """
+  The location of this team's origin. This may be any combination of city, state, country, etc., as appropriate for the tournament, and should be in human-readable format.
+  """
+  location: String
+
+  """
+  The teams registered to play for this school or organization.
+  """
+  teams: [Team]!
+}
+
+"""
+A `Team` has a team name, other entry-specific information about the team that may not apply to other teams from the same organization, a list of `Player` objects, and optionally, a list of `Rank` objects.
+
+Docs group: Registration
+"""
+type Team {
+  id: ID!
+
+  """
+  The team's name.
+  """
+  name: String!
+
+  """
+  The players registered to play on this team.
+  """
+  players: [Player]
+
+  """
+  The ranks achieved by this team.
+  """
+  ranks: [Rank]
+}
+
+"""
+Docs group: Registration
+"""
+type Rank {
+  """
+  A `Ranking` for which the team is eligible.
+  """
+  ranking: Ranking!
+
+  """
+  The position/rank the team has achieved among all teams eligible for the given Ranking. Omitting this field indicates that the rank has not been determined yet (e.g. because the tournament is still in progress) but the team is eligible for the Ranking. May not be unique (i.e., there may be a tie).
+  """
+  position: Int
+}
+
+"""
+A `Ranking` object describes an award that is given at a `Tournament`. A `Tournament` may have several `Ranking`s; for instance, it might have a "top small school" Ranking or a "top undergraduate team" Ranking.
+
+Docs group: Registration
+"""
+type Ranking {
+  """
+  The name of the ranking.
+  """
+  name: String
+
+  """
+  A description of the ranking, such as information on eligibility.
+  """
+  description: String
+}
+
+"""
+A `Player` object has basic information about a player.
+
+Docs group: Registration
+"""
+type Player {
+  id: ID!
+
+  """
+  The player's name.
+  """
+  name: String!
+
+  """
+  The player's year in school. Use `0` for kindergarten, `1` for first grade, &hellip;, `12` for twelfth grade (senior in high school), `13` for college frosh, &hellip;, `16` for college senior, `17` for college post-senior, and `18` for graduate student. Use `-1` when the notion of a grade is known to be inapplicable, e.g., for players who are not enrolled in school (this is distinct from omitting the field, which implies the player's year is unknown).
+  """
+  year: Int
+}

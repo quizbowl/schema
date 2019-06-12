@@ -1,0 +1,14 @@
+# import * from "match.graphql"
+# import * from "phase.graphql"
+# import * from "question.graphql"
+# import * from "registration.graphql"
+# import * from "tournament.graphql"
+
+scalar Date
+
+"""
+Docs group: Skip
+"""
+type Query {
+  tournaments: [Tournament]
+}
