@@ -1,0 +1,109 @@
+"""
+A `Phase` object describes a part of the tournament with a unified match structure. A typical tournament might have one phase for the preliminary rounds and a second phase for the playoff rounds.
+
+Docs group: Phase
+"""
+type Phase {
+  id: ID!
+
+  """
+  The name of the phase, such as "Preliminary Rounds" or "Playoffs".
+  """
+  name: String!
+
+  """
+  A description of the phase. Might contain information like how teams are split into pools, the use of power-matching or elimination-based formats, etc.
+  """
+  description: String
+
+  """
+  The rounds within this phase.
+  """
+  rounds: [Round]
+
+  """
+  Whether teams may trade cards during this phase. For example, `true` would be used for a power-matching or elimination structure, while `false` could be used for a round-robin structure. If absent, assumed to be `false`.
+  """
+  cards_traded: Boolean
+
+  """
+  The pools (or similar structures) into which teams are placed for this phase.
+  """
+  pools: [Pool]
+}
+
+"""
+Docs group: Phase
+"""
+type Round {
+  id: ID!
+
+  """
+  The name of the round. Possibly numerical; possibly something like "Preliminary Tiebreaker".
+  """
+  name: String!
+
+  """
+  A description of the round. Probably unnecessary, but useful for "special" rounds like tiebreakers.
+  """
+  description: String
+
+  """
+  Information on what packet(s) were used in this round. If multiple packets were used for regular play, the order of this array should be the order in which they were used. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
+  """
+  packets: [Packet]
+
+  """
+  The matches that took place in this round.
+  """
+  matches: [Match]
+}
+
+"""
+A `Pool` object represents a set of teams that, in some meaningful sense, play together for the phase. They might be round-robin pools, playoff tiers, etc. It is not required that teams _only_ play matches within their pool.
+
+Docs group: Phase
+"""
+type Pool {
+  id: ID!
+
+  """
+  The name of the pool.
+  """
+  name: String!
+
+  """
+  A description of the pool.
+  """
+  description: String
+
+  """
+  The position/rank of this Pool among all Pool objects used for its Phase. Need not be unique (e.g. in the case of parallel pools).
+  """
+  position: Int
+
+  """
+  The assignments of teams to pools for this phase.
+  """
+  pool_teams: [PoolTeam]
+}
+
+"""
+Docs group: Phase
+"""
+type PoolTeam {
+  """
+  The Pool to which the Team is assigned.
+  """
+  pool: Pool!
+
+  """
+  The Team being assigned to the Pool.
+  """
+  team: Team!
+
+  """
+  The final position/rank of this Team within this Pool.
+  """
+  position: Int
+}

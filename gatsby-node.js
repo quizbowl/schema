@@ -1,6 +1,7 @@
 /* eslint-env node */
 const path = require(`path`);
 const listTypes = require("./src/listTypes");
+const { importSchema } = require("graphql-import");
 
 const fs = require("fs");
 const debounce = require("debounce");
@@ -21,7 +22,7 @@ exports.sourceNodes = options => {
     reporter,
     actions: { createNode }
   } = options;
-  const schemaPath = path.resolve(`${__dirname}/schema.graphql`);
+  const schemaPath = path.resolve(__dirname, "schema");
   if (!fs.existsSync(schemaPath)) {
     reporter.panic(`Schema path ${schemaPath} doesn't exist.`);
   }
@@ -30,7 +31,7 @@ exports.sourceNodes = options => {
 
   async function processSchemaFile() {
     reporter.info("Processing schema…");
-    const sdl = fs.readFileSync(schemaPath).toString();
+    const sdl = importSchema(path.resolve(schemaPath, "index.graphql"));
     const schemaData = makeExecutableSchema({ typeDefs: sdl });
     addMockFunctionsToSchema({ schema: schemaData });
     const { groups, pageForType } = await listTypes(
