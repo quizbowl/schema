@@ -33,12 +33,12 @@ type Tournament {
   scoring_rules: ScoringRules
 
   """
-  The tournament's start date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  The tournament's start date, including time zone, as an ISO 8601-formatted string in the tournament's local time zone.
   """
   start_date: Date
 
   """
-  The tournament's end date including time zone as an ISO 8601-formatted string in the tournament's local time zone.
+  The tournament's end date, including time zone, as an ISO 8601-formatted string in the tournament's local time zone.
   """
   end_date: Date
 
@@ -58,14 +58,14 @@ type Tournament {
   rankings: [Ranking]
 
   """
-  The level of the tournament.
+  The intended audience of the tournament.
   """
-  level: TournamentLevel
+  audience: TournamentAudience
 
   """
-  The difficulty of the tournament.
+  The level of the tournament, within the context of its `audience`.
   """
-  difficulty: TournamentDifficulty
+  level: TournamentLevel
 
   """
   Free-form string of question set(s) used at this tournament.
@@ -73,24 +73,38 @@ type Tournament {
   question_set: String
 
   """
+  The subject matter of the tournament question set(s).
+  """
+  content: TournamentContent
+
+  """
   Free-form string of other information relevant to tournament.
   """
   info: String
 }
 
-enum TournamentLevel {
+enum TournamentAudience {
+  elementary_school
   middle_school
   high_school
+  community_college
   college
   open
-  trash
   other
 }
 
-enum TournamentDifficulty {
+enum TournamentLevel {
   novice
   regular
   nationals
+  other
+}
+
+enum TournamentContent {
+  general_academic
+  specialized_academic
+  trash
+  other
 }
 
 """
@@ -144,9 +158,9 @@ type Round {
   description: String
 
   """
-  Free-form information on what packet(s) were used in this round. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
+  Information on what packet(s) were used in this round. If multiple packets were used for regular play, the order of this array should be the order in which they were used. If this is omitted and the `question_set` specified in the `Tournament` object has a packet that logically matches this round's `name` (e.g. "Round 1" and "Packet 1"), it can be assumed that the matching packet was used (and no other packets were used).
   """
-  packets: String
+  packets: [Packet]
 
   """
   The matches that took place in this round.
@@ -422,7 +436,7 @@ type Match {
   carryover_phases: [Phase]
 
   """
-  The question-by-question account of what happened; see below.
+  The question-by-question account of what happened.
   """
   match_questions: [MatchQuestion]
 
@@ -433,13 +447,84 @@ type Match {
 }
 
 """
+Docs group: Question
+"""
+type Packet {
+  """
+  A human-readable identifier. Often primarily numeric (e.g., `Packet 1`), but could also be identified by authors (`Chicago` or `Yale + Maryland`), as for packet-submission tournaments.
+  """
+  name: String!
+  
+  """
+  The packet number, if that notion is meaningful. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
+  """
+  number: Int
+  
+  """
+  The authors of the packet. May also be contained in the `name`, but need not be, e.g. if both `number` and `authors` are specified, the `name` will typically only contain one of them (whichever is more important).
+  """
+  authors: [String]
+
+  """
+  How the packet is expected to be used. An `extra` packet typically consists only of tossups, and is for use in overtime and/or as replacements, as necessary. Note that a packet might be used differently in case of unusual situations.
+  """
+  role: PacketRole
+
+  """
+  Any further details on the packet.
+  """
+  notes: String
+
+  """
+  The contents of the packet, in order.
+  """
+  questions: [Question]
+}
+
+enum PacketRole {
+  regular
+  finals
+  extra
+  overtime
+  replacement
+  backup
+  tiebreaker
+  scrimmage
+}
+
+"""
 Docs group: Match
 """
 type MatchQuestion {
   """
-  Which question number this was. Starts at 1.
+  Which tossup-bonus cycle number this was. Starts at 1.
   """
   question_number: Int!
+
+  """
+  Information about the tossup question in this cycle.
+  """
+  tossup_question: Question
+
+  """
+  The time at which the moderator began reading the tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  tossup_start_time: Date
+
+  """
+  Information about the tossup question used as a replacement in this cycle, if any. Omit if the tossup was not replaced. Multiple replacement tossups are not currently supported.
+  """
+  replacement_tossup_question: Question
+
+  """
+  The time at which the moderator began reading the replacement tossup. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  replacement_tossup_start_time: Date
+
+  """
+  The `MatchTeam`s who were eligible to answer the replacement tossup. Any `MatchTeam`s in this match but not in this field should be understood to have been eligible to answer the original `tossup_question`.
+  """
+  replacement_tossup_question_match_teams: [MatchTeam]
 
   """
   The number of points scored and by whom on each buzz. The length of this array will be equal to or less than the number of teams playing the match.
@@ -460,6 +545,16 @@ type MatchQuestion {
   Information about the bonus that was read for this question. Must be omitted if `bonus_points` is present; may be omitted if no bonus was read for this question, but should not be omitted merely because no points were earned on the bonus.
   """
   bonus: MatchQuestionBonus
+
+  """
+  The time at which the moderator began reading the bonus. An ISO 8601-formatted string, with time zone, in the tournament's local time zone.
+  """
+  bonus_start_time: Date
+
+  """
+  Information about the bonus question used as a replacement in this cycle, if any. Omit if the bonus was not replaced. Multiple replacement bonuses are not currently supported.
+  """
+  replacement_bonus: MatchQuestionBonus
 }
 
 """
@@ -477,6 +572,11 @@ type MatchQuestionBuzz {
   player: Player!
 
   """
+  Details on the timing of the buzz.
+  """
+  buzz_position: BuzzPosition
+
+  """
   The result of the player's buzz, representing how many points the player's team received.
   """
   result: AnswerType!
@@ -485,16 +585,94 @@ type MatchQuestionBuzz {
 """
 Docs group: Match
 """
-type MatchQuestionBonus {
+type BuzzPosition {
   """
-  Which bonus number this was. May or may not match the `question_number` of the `MatchQuestion` parent, depending on whether bonuses are paired with tossups or simply read in order (and if the latter, on whether any bonus-earning questions failed to lead to a bonus).
+  The time of the buzz. An ISO 8601-formatted string, with time zone, in the tournament's local time zone. May not be before the start time of reading the relevant question.
+  """
+  time: Date
+
+  """
+  The (`0`-based) index of the word on which the player buzzed. Hearing any part of a word should be considered the same as hearing the entire word. So if a question begins "Abraham Lincoln…" and the player buzzes on "Abra—", this value would be `0`.
+  """
+  word_index: Int
+
+  """
+  The (`0`-based) index of the clue on which the player buzzed. Clues may be defined in the `Question` object. Hearing any part of a clue should be considered the same as hearing the entire clue.
+  """
+  clue_index: Int
+}
+
+"""
+This object can be reused for every time the same question is read, i.e., it represents a question in general rather than a question being read in a specific match.
+
+Docs group: Question
+"""
+type Question {
+  """
+  The number of the question in the packet.
   """
   question_number: Int!
+  
+  """
+  The type of the question.
+  """
+  type: QuestionType!
+  
+  """
+  The number of parts the question has (typically `1` if `type` is `tossup` and `3` if `type` is `bonus`, but some formats may vary).
+  """
+  parts: Int
+  
+  """
+  The identifier for the question in some external system, if any (e.g., the question IDs that NAQT prints below each question in its packet).
+  """
+  external_id: String
+  
+  """
+  Freeform information about the question's category, e.g. `British History`.
+  """
+  category: String
+  
+  """
+  Freeform information about the question's category at a higher level of aggregation, e.g. `History`.
+  """
+  category_group: String
+  
+  """
+  The text of the question (as a single field).
+  """
+  text: String
+  
+  """
+  The text of the question, broken up into clues so that `BuzzPosition`s can reference which clue was being buzzed on. Defining "clue" is outside the scope of this schema.
+  """
+  clues: [String]
+}
+
+enum QuestionType {
+  tossup
+  bonus
+  lightning
+}
+
+"""
+Docs group: Match
+"""
+type MatchQuestionBonus {
+  """
+  Information about the question used as a bonus.
+  """
+  question: Question
 
   """
   Information about each part of the bonus.
   """
   parts: [MatchQuestionBonusPart]!
+
+  """
+  The `MatchTeam`s who were eligible to answer this bonus. This is primarily useful for replacement questions. If omitted, it is assumed to be only the team who answered the tossup correctly (in scoring rules that do not use bouncebacks) or all teams (in scoring rules that use bouncebacks).
+  """
+  eligible_match_teams: [MatchTeam]
 }
 
 """
@@ -584,9 +762,29 @@ type MatchTeam {
   lineups: [Lineup]
 
   """
+  An object containing information that documents a team's acceptance of the result of the match. The absence of this object could mean the team has not yet accepted the result, the team has refused to accept the result, or simply that the tournament does not care to track acceptance of results. The exact meaning of "acceptance" is up to the tournament—it could mean acceptance of the overall outcome, acceptance of the final score, acceptance of every detail, or something else.
+  """
+  signature: Signature
+
+  """
   Indicates that the match should be excluded from calculations of standings, statistics, etc. If absent, this will be assumed to be `false`.
   """
   suppress_from_statistics: Boolean
+}
+
+"""
+Docs group: Match
+"""
+type Signature {
+  """
+  The URL of an image of the signature of a member of the team (typically a coach or captain), indicating their acceptance of the result.
+  """
+  image_url: String
+
+  """
+  Any comments the signer made related to acceptance of the result.
+  """
+  notes: String
 }
 
 """
@@ -747,7 +945,7 @@ type Ranking {
 """
 A `Player` object has basic information about a player.
 
-Docs group: Player
+Docs group: Team
 """
 type Player {
   id: ID!

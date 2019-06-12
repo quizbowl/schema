@@ -4,7 +4,7 @@ title: Introduction
 
 Here we present an object schema for describing a quizbowl tournament. Note that this is about the necessary data to pass back and forth and get a full recounting of what happened; it does not attempt to be any type of database schema.
 
-## Current version: **1.5**
+## Current version: **2.0**
 
 Your feedback on the schema is welcome—it's [open source](http://github.com/quizbowl/schema)!
 
