@@ -41,7 +41,7 @@ A quick look at the top-level files and directories you'll see.
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that this project depends on (npm packages) that are automatically installed.
 
-1.  **`schema.graphql`**: Probably the most important files! This is where the schema itself is defined in the [GraphQL Schema language](https://graphql.org/learn/schema/). Edit the files within to see changes on your local site.
+1.  **`/schema`**: Probably the most important files! This is where the schema itself is defined in the [GraphQL Schema language](https://graphql.org/learn/schema/). Edit the files within to see changes on your local site.
 
 1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of the site (what you see in the browser) including the page templates and HTML layouts. `src` is a convention for “source code”.
 
