@@ -266,7 +266,8 @@ h1 {
 }
 
 .post pre,
-.post code {
+.post code,
+p.preBackground {
   border: 1px solid #d5d5e9;
   background-color: #eef;
   padding: 8px 12px;
@@ -662,4 +663,27 @@ table.fields tr.optional th:after {
 
 #gatsby-noscript {
   display: none;
+}
+
+input {
+  padding: 0.5em;
+  border: 1px solid lightgray;
+  font-size: 1em;
+  border-radius: 3px;
+  margin: 0 0.25em 0.25em;
+}
+
+input[type="submit"] {
+  background-color: #d5d5e9;
+}
+
+form table {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+form table td,
+form table th {
+  padding: 1em;
+  text-align: left;
 }
