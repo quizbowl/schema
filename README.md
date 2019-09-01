@@ -25,6 +25,7 @@ A quick look at the top-level files and directories you'll see.
 
     .
     ├── node_modules
+    ├── schema
     ├── src
     ├── static
     ├── svg
@@ -36,10 +37,11 @@ A quick look at the top-level files and directories you'll see.
     ├── now.json
     ├── package.json
     ├── README.md
-    ├── schema.graphql
     └── yarn.lock
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that this project depends on (npm packages) that are automatically installed.
+
+1.  **`/schema`**: Probably the most important files! This is where the schema itself is defined in the [GraphQL Schema language](https://graphql.org/learn/schema/). Edit the files within to see changes on your local site.
 
 1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of the site (what you see in the browser) including the page templates and HTML layouts. `src` is a convention for “source code”.
 
@@ -62,8 +64,6 @@ A quick look at the top-level files and directories you'll see.
 1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for the project.
 
 1.  **`README.md`**: This file!
-
-1.  **`schema.graphql`**: Probably the most important file! This is where the schema itself is defined in the [GraphQL Schema language](https://graphql.org/learn/schema/). Edit this file and restart the development server to see changes on your local site.
 
 1.  **`yarn.lock`** (See `package.json` above). This is an automatically generated file based on the exact versions of the npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
