@@ -93,11 +93,6 @@ Docs group: Phase
 """
 type PoolTeam {
   """
-  The Pool to which the Team is assigned.
-  """
-  pool: Pool!
-
-  """
   The Team being assigned to the Pool.
   """
   team: Team!
