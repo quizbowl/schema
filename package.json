@@ -18,7 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.19",
-    "gatsby-transformer-remark": "^2.6.20",
+    "gatsby-transformer-remark": "^5.25.1",
     "graphql": "^14.5.4",
     "graphql-import": "^0.7.1",
     "graphql-tools": "^4.0.5",
