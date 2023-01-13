@@ -5,6 +5,7 @@ import type { GatsbyNode } from "gatsby";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import { addMocksToSchema } from "@graphql-tools/mock";
 import { graphql } from "graphql";
+import { watch } from "fs";
 
 let latestGroups: SchemaTypeGroup[] = [];
 let latestPagesForTypes: Record<string, string> = {};
@@ -42,11 +43,14 @@ const contents: GatsbyNode = {
     }
 
     processSchemaFile();
+    watch("./schema", processSchemaFile);
   },
   async createPages({
-    actions: { createPage, deletePage },
+    actions: { createPage },
     getNodeAndSavePathDependency,
+    reporter,
   }) {
+    reporter.info("Creating pages…");
     const templatePath = resolve(
       `${__dirname}/src/components/typeTemplate.tsx`
     );
@@ -55,9 +59,6 @@ const contents: GatsbyNode = {
         path: group.outputName,
         component: templatePath,
       };
-      if (hasCreatedPages) {
-        deletePage(page);
-      }
       createPage({
         ...page,
         context: { group, pageForType: latestPagesForTypes },
