@@ -1,86 +1,54 @@
-# Tournament Schema Website
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal TypeScript starter
+</h1>
 
 ## 🚀 Quick start
 
-1.  **Start developing.**
+1.  **Create a Gatsby site.**
+
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby
+    ```
+
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
-    ```sh
-    cd path-to-qb-schema/
-    yarn && yarn dev
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the code and start customizing!**
 
-    The site is now running at `http://localhost:8000`!
+    Your site is now running at http://localhost:8000!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
-    Open the `qb-schema` directory in your code editor of choice and edit `src/pages/index.md`. Save your changes and the browser will update in real time!
+4.  **Learn more**
 
-## 🧐 What's inside?
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-A quick look at the top-level files and directories you'll see.
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-    .
-    ├── node_modules
-    ├── schema
-    ├── src
-    ├── static
-    ├── svg
-    ├── .eslintrc.json
-    ├── .gitignore
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── LICENSE
-    ├── now.json
-    ├── package.json
-    ├── README.md
-    └── yarn.lock
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that this project depends on (npm packages) that are automatically installed.
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-1.  **`/schema`**: Probably the most important files! This is where the schema itself is defined in the [GraphQL Schema language](https://graphql.org/learn/schema/). Edit the files within to see changes on your local site.
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of the site (what you see in the browser) including the page templates and HTML layouts. `src` is a convention for “source code”.
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-1.  **`/static`**: This directory contains files available for download from the site.
+## 🚀 Quick start (Gatsby Cloud)
 
-1.  **`/svg`**: This directory contains a couple of small icons seen on the site.
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
-1.  **`.eslintrc.json`**: This is the configuration file for [ESLint](https://eslint.org). ESLint is a tool to enforce JavaScript coding standards.
-
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where information about the site (metadata) like the site title and description live, along with which Gatsby plugins it includes, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/). This site uses these APIs to dynamically create additional pages.
-
-1.  **`LICENSE`**: This site is licensed under the MIT license.
-
-1.  **`now.json`**: This is the configuration file for deploying the site to [now.sh](https://now.sh). See "Deploy" below.
-
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for the project.
-
-1.  **`README.md`**: This file!
-
-1.  **`yarn.lock`** (See `package.json` above). This is an automatically generated file based on the exact versions of the npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on its website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, they recommend starting with their [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to their documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-The main repository is configured to automatically deploy the `master` branch to [schema.quizbowl.technology](https://schema.quizbowl.technology) on every change; any branch you create will also be deployed to a unique URL every time you push to it.
-
-There's probably no case in which you need to do this, but you can deploy your own local copy to another URL once you have `now` [configured for yourself](https://zeit.co/now/):
-
-```sh
-$ now
-```
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)

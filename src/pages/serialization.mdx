@@ -2,7 +2,8 @@
 title: Serialization
 ---
 
-import VersionNumber from '../components/versionNumber'
+export { MDXTemplate as default } from "../components/mdxTemplate";
+import VersionNumber from "../components/versionNumber";
 
 This page describes a JSON-based serialization format to write a whole tournament to a file.
 
@@ -30,16 +31,20 @@ Wherever an object includes another object as a field, it **may** substitute a "
 
 A reference object has one key called `$ref` with a value of the `id` of the object to which it points, so if you have an object defined in one place:
 
-    {
-      "id": "team_1",
-      "type": "Team",
-      "name": "Team 1",
-      "players": [...]
-    }
+```json
+{
+    "id": "team_1",
+    "type": "Team",
+    "name": "Team 1",
+    "players": [...]
+}
+```
 
 you can reference it elsewhere in the file with a reference object:
 
-    { "$ref": "team_1" }
+```json
+{ "$ref": "team_1" }
+```
 
 ## Dangling references
 

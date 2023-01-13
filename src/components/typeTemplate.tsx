@@ -1,31 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Layout from "./layout";
-import remark from "remark";
-import remark2react from "remark-react";
+import { Link, PageProps } from "gatsby";
+import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
+import { Remark } from "react-remark";
+import { SchemaTypeFields, SchemaTypeGroup } from "../listTypes";
+import Layout from "./layout";
 
-function parseMarkdown(input) {
-  return remark()
-    .use(remark2react)
-    .processSync(input).contents;
-}
+type PageContext = {
+  group: SchemaTypeGroup;
+  pageForType: Record<string, string>;
+};
 
-function adjustName(name) {
-  if (name.startsWith("Schema_")) {
-    return name.replace(/^Schema_/u, "");
-  }
-  return name;
-}
-
-const TypeTemplate = ({
+const TypeTemplate: React.FC<PageProps<object, PageContext>> = ({
   pageContext: {
     group: { name, types },
-    pageForType
-  }
+    pageForType,
+  },
 }) => {
-  function renderObjectType(type) {
+  function adjustName(name: string) {
+    return name;
+  }
+  function renderObjectType(type: SchemaTypeFields) {
     const pageName = pageForType[type.name];
     const adjustedName = adjustName(type.name);
     return (
@@ -34,14 +28,14 @@ const TypeTemplate = ({
       </Link>
     );
   }
-  function renderType(type) {
+  function renderType(type: SchemaTypeFields): ReactNode {
     switch (type.kind) {
       case "NON_NULL":
-        return renderType(type.ofType);
+        return renderType(type.ofType!);
       case "LIST":
         return (
           <>
-            Array&nbsp;of&nbsp;<code>{renderType(type.ofType)}</code>
+            Array&nbsp;of&nbsp;<code>{renderType(type.ofType!)}</code>
           </>
         );
       case "ENUM":
@@ -49,7 +43,7 @@ const TypeTemplate = ({
           <>
             One of the following:
             <ul>
-              {type.enumValues.map(value => (
+              {type.enumValues!.map((value) => (
                 <li className="name" key={value.name}>
                   {value.name}
                 </li>
@@ -72,21 +66,21 @@ const TypeTemplate = ({
     <Layout>
       <Helmet>
         <title>
-          {name == null ? "Tournament Schema" : `Tournament Schema — ${name}`}
+          {name == null ? "Tournament Schema" : `Tournament Schema — ${name}`}
         </title>
       </Helmet>
-      {types.map(type => (
+      {types.map((type) => (
         <div className="post" key={type.name} id={adjustName(type.name)}>
           <header className="post-header">
             <h1>{type.title}</h1>
           </header>
           <article className="post-content">
-            {parseMarkdown(type.description.replace(/\s*Docs group:.*$/, ""))}
+            <Remark>{type.description.replace(/\s*Docs group:.*$/, "")}</Remark>
             <table className="fields">
               <tbody>
-                {type.fields
-                  .filter(field => field.name !== "id")
-                  .map(field => (
+                {type
+                  .fields!.filter((field) => field.name !== "id")
+                  .map((field) => (
                     <tr
                       key={field.name}
                       className={
@@ -95,7 +89,9 @@ const TypeTemplate = ({
                     >
                       <th>{field.name}</th>
                       <td className="type">{renderType(field.type)}</td>
-                      <td>{parseMarkdown(field.description)}</td>
+                      <td>
+                        <Remark>{field.description}</Remark>
+                      </td>
                     </tr>
                   ))}
               </tbody>
@@ -105,18 +101,6 @@ const TypeTemplate = ({
       ))}
     </Layout>
   );
-};
-
-TypeTemplate.propTypes = {
-  pageContext: PropTypes.shape({
-    group: PropTypes.shape({
-      types: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string.isRequired
-        }).isRequired
-      )
-    }).isRequired
-  }).isRequired
 };
 
 export default TypeTemplate;

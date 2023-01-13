@@ -1,15 +1,14 @@
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import menuIcon from "../../svg/menu-icon.svg";
 
-const Header = ({ siteTitle }) => (
+type Props = { siteTitle: string };
+const Header: React.FC<Props> = ({ siteTitle }) => (
   <header className="site-header">
     <div className="wrap">
       <Link className="site-title" to="/">
         {siteTitle}
       </Link>
-
       <nav className="site-nav">
         <a href="#" className="menu-icon">
           <img src={menuIcon} />
@@ -34,17 +33,9 @@ const Header = ({ siteTitle }) => (
             Serialization
           </Link>
         </div>
-      </nav>
+      </nav>{" "}
     </div>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-  siteTitle: ``
-};
 
 export default Header;
