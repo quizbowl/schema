@@ -1,6 +1,6 @@
 {
   "name": "qb-schema",
-  "version": "2.1",
+  "version": "2.1.1",
   "private": true,
   "description": "API and schema documentation for describing quiz tournaments.",
   "keywords": [
