@@ -1,14 +1,19 @@
-import { Link, PageProps } from "gatsby";
+import { HeadFC, Link, PageProps } from "gatsby";
 import React, { ReactNode } from "react";
-import { Helmet } from "react-helmet";
 import { Remark } from "react-remark";
 import { SchemaTypeFields, SchemaTypeGroup } from "../listTypes";
-import Layout from "./layout";
+import Layout, { HeadTemplate } from "./layout";
 
 type PageContext = {
   group: SchemaTypeGroup;
   pageForType: Record<string, string>;
 };
+
+export const Head: HeadFC<object, PageContext> = ({
+  pageContext: {
+    group: { name },
+  },
+}) => <HeadTemplate title={name} />;
 
 const TypeTemplate: React.FC<PageProps<object, PageContext>> = ({
   pageContext: {
@@ -64,11 +69,6 @@ const TypeTemplate: React.FC<PageProps<object, PageContext>> = ({
   }
   return (
     <Layout>
-      <Helmet>
-        <title>
-          {name == null ? "Tournament Schema" : `Tournament Schema — ${name}`}
-        </title>
-      </Helmet>
       {types.map((type) => (
         <div className="post" key={type.name} id={adjustName(type.name)}>
           <header className="post-header">
