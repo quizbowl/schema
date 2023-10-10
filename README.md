@@ -6,6 +6,7 @@
 
     ```shell
     cd schema/
+    npm install
     npm run develop
     ```
 
