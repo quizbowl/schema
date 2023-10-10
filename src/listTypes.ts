@@ -1,9 +1,39 @@
+import type { ExecutionResult } from "graphql";
+
 /* eslint-env node */
-function toInitialLowerCase(string) {
+function toInitialLowerCase(string: string) {
   return string[0].toLowerCase() + string.slice(1);
 }
 
-module.exports = async function listTypes(graphql, prefix = "Schema_") {
+export type SchemaType = {
+  groupName: string;
+  title: string;
+  description: string;
+  fields?: SchemaField[];
+} & SchemaTypeFields;
+
+export type SchemaTypeFields = {
+  name: string;
+  kind: string;
+  enumValues?: { name: string; description: string }[];
+  ofType?: SchemaTypeFields;
+};
+
+export type SchemaField = {
+  name: string;
+  description: string;
+  type: SchemaTypeFields;
+};
+
+export type SchemaTypeGroup = {
+  name: string;
+  outputName: string;
+  types: SchemaType[];
+};
+
+export default async function listTypes(
+  graphql: (queryString: string) => Promise<ExecutionResult>
+) {
   const result = await graphql(`
     {
       __schema {
@@ -50,20 +80,16 @@ module.exports = async function listTypes(graphql, prefix = "Schema_") {
   `);
   const {
     data: {
-      __schema: { types: allTypes }
-    }
+      __schema: { types: allTypes },
+    },
   } = result;
-  const types = allTypes.filter(
-    type =>
-      !type.name.startsWith("_") &&
-      type.name.startsWith(prefix) &&
-      type.kind !== "ENUM"
+  const types: SchemaType[] = allTypes.filter(
+    (type: SchemaType) => !type.name.startsWith("_") && type.kind !== "ENUM"
   );
-  const pageForType = {};
-  const groups = [];
-  const pattern = new RegExp(`^${prefix}`, "u");
+  const pageForType: Record<string, string> = {};
+  const groups: SchemaTypeGroup[] = [];
   for (const type of types) {
-    const title = type.name.replace(pattern, "");
+    const title = type.name;
     if (type.description != null) {
       const match = type.description.match(/Docs group: (\w+)/u);
       if (match) {
@@ -73,7 +99,7 @@ module.exports = async function listTypes(graphql, prefix = "Schema_") {
         }
         const outputName = "/" + toInitialLowerCase(groupName);
         type.groupName = groupName;
-        const currentGroup = groups.find(group => group.name === groupName);
+        const currentGroup = groups.find((group) => group.name === groupName);
         if (currentGroup) {
           currentGroup.types.push(type);
         } else {
@@ -89,4 +115,4 @@ module.exports = async function listTypes(graphql, prefix = "Schema_") {
     type.title = title;
   }
   return { types, groups, pageForType };
-};
+}

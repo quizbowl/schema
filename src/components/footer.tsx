@@ -1,8 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import githubIcon from "../../svg/github-icon.svg";
 
-const Footer = ({ data }) => (
+type Data = {
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+    };
+  };
+};
+
+const Footer: React.FC<{ data: Data }> = ({ data }) => (
   <footer className="site-footer">
     <div className="wrap">
       <div className="footer-col-1 column">
@@ -10,7 +18,6 @@ const Footer = ({ data }) => (
           <li>{data.site.siteMetadata.title}</li>
         </ul>
       </div>
-
       <div className="footer-col-2 column">
         <ul>
           <li>
@@ -30,13 +37,5 @@ const Footer = ({ data }) => (
     </div>
   </footer>
 );
-
-Footer.propTypes = {
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({ title: PropTypes.string.isRequired })
-    }).isRequired
-  }).isRequired
-};
 
 export default Footer;
